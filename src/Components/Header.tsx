@@ -14,6 +14,7 @@ export function Header () {
         </Link>
         <button>Reset</button>
         <button>New Player</button>
+        <p></p>
         </footer>
     </div>
   );
