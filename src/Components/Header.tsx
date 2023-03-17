@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import '../css/Header.css';
 
 export function Header () {
@@ -9,9 +10,12 @@ export function Header () {
       <p>Test Your knowledge with React Fast Trivia!</p>
       </section>
       <footer>
+        <Link to="/LeaderBoard">
         <button>LeaderBoards</button>
+        </Link>
         <button>Reset</button>
         <button>New Player</button>
+        <p></p>
         </footer>
     </div>
   );
