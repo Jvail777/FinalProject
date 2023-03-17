@@ -1,0 +1,70 @@
+.trivia-card {
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 40px;
+    text-align: center;
+  }
+  
+  h2 {
+    color: #333;
+    font-family: "Montserrat", sans-serif;
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  li {
+    /* margin: 20px; */
+  }
+
+  label {
+    cursor: pointer;
+    display: block;
+    font-family: "Open Sans", sans-serif;
+    font-size: 24px;
+    padding: 20px;
+    position: relative;
+    transition: background-color 0.2s ease;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  span {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    display: block;
+    padding: 20px;
+    transition: background-color 0.2s ease;
+  }
+  
+  input[type="radio"]:checked + span {
+    background-color: #7fc6a4;
+    color: #fff;
+  }
+  
+
+  button {
+    background-color: rgb(160, 12, 81); /* set the background color */
+    color: white; /* set the text color */
+    padding: 12px 24px; /* add some padding to make the button easier to click */
+    font-size: 16px; /* set the font size */
+    border: solid black; /* remove the border */
+    border-radius: 4px; /* round the corners */
+    cursor: pointer; /* add a cursor on hover */
+    transition: background-color 0.3s ease; /* add a transition effect */
+  }
+  
+  button:hover {
+    background-color: #cf6098; /* change the background color on hover */
+  }

@@ -1,0 +1,43 @@
+.Header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    height: 100vh;
+    
+    background-image: url(../images/final.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .Header section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .Header h1 {
+    font-size: 3rem;
+    margin: 0;
+    color: orange;
+    
+  }
+  
+  .Header p {
+    font-size: 1.5rem;
+    margin: 0;
+    color: orange
+  }
+  
+  .Header footer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 38rem;
+  }
+  
+  .Header footer p {
+    font-size: 1.2rem;
+    margin: 0px;
+    
+  }
