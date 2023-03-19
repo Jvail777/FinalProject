@@ -1,10 +1,13 @@
 form{
     border: 2px solid black;
     border-radius: 5px;
-    margin: 70px;
-    padding: 20px;
+    margin: 250px;
+    padding: 30px;
     display: flex;
     background-color: white;
+    color: orange;
+    background-color: black;
+    text-align: center;
 }
 
 input[type=submit] {
@@ -12,7 +15,7 @@ input[type=submit] {
     background-color: orange;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 10px 0px;
     border: none;
     border-radius: 4px;
     display: block;
@@ -57,3 +60,7 @@ input[type=text], select {
     margin: 0;
     color: orange
   }
+
+.Title {
+    font-family: Bungee Shade;
+}

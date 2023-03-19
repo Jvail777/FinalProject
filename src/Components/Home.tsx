@@ -5,7 +5,7 @@ export function Home () {
   return (
     <div className="HomeHeader">
     <section>
-    <h1>React Fast Trivia!</h1>
+    <h1 className="Title">React Fast Trivia!</h1>
     <p>Test Your knowledge with React Fast Trivia!</p>
     </section>
     <form>
