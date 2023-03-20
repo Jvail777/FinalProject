@@ -4,9 +4,11 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 // import './css/TriviaCard.css';
 // import './css/Header.css';
 // import { QuestionCard } from './Components/QuestionCard';
-import { Header } from "./Components/Header";
-import { LeaderBoard } from "./Components/LeaderBoard";
-import { Home } from "./Components/Home";
+
+import { Header } from './Components/Header';
+import { LeaderBoard } from './Components/LeaderBoard';
+import { Home } from './Components/Home';
+
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
       <div className="App">
         {/* <QuestionCard question={'Who is the best grand circus staff member?'} answers={["Olaposi","Spencer","Jonathan","Bron"]} correctAnswerIndex={2} onAnswerSelected={function (isCorrect: boolean): void {
       } }/> */}
+
         <Header></Header>
 
         <Routes>
@@ -22,6 +25,7 @@ function App() {
           {/* <Route path="*" element={<Navigate to={"/Home"} />}></Route> */}
         </Routes>
       </div>
+
     </BrowserRouter>
   );
 }
