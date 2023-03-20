@@ -1,0 +1,29 @@
+body {
+    background-image: url(../images/final.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.LB-Header h1 {
+    text-align: center;
+    margin-top: 70px;
+    color:#F89C13;
+}
+
+.LB-Buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.LB-Header button {
+    color: #F89C13;
+    background-color: #601882;
+    margin: 20px;
+}
+
+.LB-Footer {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 70px;
+    margin-right: 70px;
+}
