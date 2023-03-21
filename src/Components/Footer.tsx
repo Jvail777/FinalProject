@@ -17,7 +17,9 @@ export function Footer () {
         <button>LeaderBoards</button>
         </Link>
         <button>Reset</button>
+        <Link to="/Login">
         <button>New Player</button>
+<<<<<<< HEAD
         <button onClick={toggle}>How To Play</button>
         <Modal isOpen = {modal} toggle = {toggle} backdrop = {true} centered = {true}>
         <ModalHeader toggle = {toggle}>How To Play</ModalHeader>
@@ -29,6 +31,10 @@ export function Footer () {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.</ModalBody>
         </Modal>
+=======
+        </Link>
+        <button>How To Play</button>
+>>>>>>> 0e66baec631a2d76d5ab1ebb2412bbfba30143a0
         </div>
     )
 }

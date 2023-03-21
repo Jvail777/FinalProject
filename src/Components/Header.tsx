@@ -9,15 +9,6 @@ export function Header () {
       <h1 className="Title">React Fast Trivia!</h1>
       <p>Test Your knowledge with React Fast Trivia!</p>
       </section>
-      <footer>
-        <Link to="/LeaderBoard">
-        <button>LeaderBoards</button>
-        </Link>
-        <button>Reset</button>
-        <button>New Player</button>
-        <button>How To Play</button>
-        <p></p>
-        </footer>
     </div>
   );
 }
