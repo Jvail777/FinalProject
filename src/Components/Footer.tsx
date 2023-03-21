@@ -8,7 +8,9 @@ export function Footer () {
         <button>LeaderBoards</button>
         </Link>
         <button>Reset</button>
+        <Link to="/Login">
         <button>New Player</button>
+        </Link>
         <button>How To Play</button>
         </div>
     )
