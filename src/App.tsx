@@ -10,6 +10,7 @@ import { LeaderBoard } from './Components/LeaderBoard';
 import { Login } from './Components/Login';
 import { Home } from "./Components/Home";
 import { Footer } from "./Components/Footer";
+import Dropdown from "./Components/Dropdown";
 
 
 
@@ -21,12 +22,14 @@ function App() {
       } }/> */}
 
         <Header/>
-        <Footer/>
+        
         <Routes>
           {/* when click on leaderboard it doesn't show new page - just adds to bottom */}
           <Route path="/LeaderBoard" element={<LeaderBoard />} />
-          <Route path="/Login" element={<Login/>}></Route>
+          <Route path="/Login" element={<Login/>}/>
+          <Route path="/Dropdown" element={<Dropdown/>}/>
         </Routes>
+        <Footer/>
       </div>
 
     </BrowserRouter>

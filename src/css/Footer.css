@@ -1,0 +1,17 @@
+.Footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}   
+
+button {
+    background-color: orange;
+    color: white;
+    padding: 14px 20px;
+    margin: 20px;
+    border: none;
+    border-radius: 4px;
+}
