@@ -1,20 +1,35 @@
-import * as React from 'react';
-import '../css/Home.css'
+// import * as React from 'react';
+// import { Link } from 'react-router-dom';
+// import '../css/Login.css'
 
-export function Home () {
-  return (
-    <div className="HomeHeader">
-    <section>
-    <h1 className="Title">React Fast Trivia!</h1>
-    <p>Test Your knowledge with React Fast Trivia!</p>
-    </section>
-    <form>
-      <label>
-        Insert Name to Begin!
-        <input type="text" name="name" />
-      </label>
-        <input type="submit" value="Submit" />
-    </form>
+// export function Home () {
+//   return (
+//     <div className="HomeHeader">
+//     <form>
+//       <label>
+//         Insert Name to Begin!
+//         <input type="text" name="name" />
+//       </label>
+//         <input type="submit" value="Submit" />
+//     </form>
+//     <Link to="/LeaderBoard">
+//         <button>LeaderBoards</button>
+//         </Link>
+//         <Link to="/Home">
+//         <button>Reset</button>
+//         </Link>
+//         <Link to="/Home">
+//         <button>New Player</button>
+//         </Link>
+//     </div>
+//   );
+// }
+
+export function Home() {
+  return(
+    <div>
+
     </div>
-  );
+  )
+
 }

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import "../css/LeaderBoard.css";
 
 export function LeaderBoard() {
@@ -12,7 +13,9 @@ export function LeaderBoard() {
         <button>Hard</button>
       </div>
       <div className="LB-Footer">
+      <Link to="/Home">
         <button>Home</button>
+        </Link>
         <button>Back</button>
       </div>
     </div>
