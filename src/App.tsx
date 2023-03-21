@@ -10,7 +10,6 @@ import { LeaderBoard } from './Components/LeaderBoard';
 import { Login } from './Components/Login';
 import { Home } from "./Components/Home";
 import { Footer } from "./Components/Footer";
-import Dropdown from "./Components/Dropdown";
 
 
 
@@ -21,7 +20,7 @@ function App() {
         {/* <QuestionCard question={'Who is the best grand circus staff member?'} answers={["Olaposi","Spencer","Jonathan","Bron"]} correctAnswerIndex={2} onAnswerSelected={function (isCorrect: boolean): void {
       } }/> */}
 
-        <Header/>
+
         
         <Routes>
           {/* when click on leaderboard it doesn't show new page - just adds to bottom */}
