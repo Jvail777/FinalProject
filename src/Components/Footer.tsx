@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+
 import {Button, Modal, ModalBody, ModalHeader} from "reactstrap";
 
 import '../css/Footer.css'
@@ -12,6 +13,12 @@ export function Footer () {
     const [modal, setModal] = useState(false);
 
     const toggle = () => setModal(!modal);
+
+    const closeBtn = (
+        <button className="close" onClick={toggle} type="button">
+          &times;
+        </button>
+      );
 
     return (
         <div className="Footer">
@@ -26,7 +33,7 @@ export function Footer () {
         </Link>
         <button onClick={toggle}>How To Play</button>
         <Modal isOpen = {modal} toggle = {toggle} backdrop = {true} backdropClassName = "Modal" centered = {true}>
-        <ModalHeader toggle = {toggle}>How To Play</ModalHeader>
+        <ModalHeader toggle = {toggle} close={closeBtn} >How To Play</ModalHeader>
         <ModalBody contentClassName = "modalBody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut

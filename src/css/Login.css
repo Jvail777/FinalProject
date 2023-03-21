@@ -1,12 +1,13 @@
 form{
-    border: 2px solid black;
+    /* border: 2px solid black; */
     border-radius: 5px;
     margin: 250px;
     padding: 30px;
     display: flex;
     background-color: white;
     color: orange;
-    background-color: black;
+    font-size: 25px;
+    background-color: transparent;
     text-align: center;
     align-items: center;
 }
@@ -15,6 +16,7 @@ input[type=submit] {
     width: 20%;
     background-color: orange;
     color: white;
+    font-size: 20px;
     padding: 14px 20px;
     margin: 10px 0px;
     margin-top: 29px;
