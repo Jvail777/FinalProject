@@ -3,12 +3,10 @@ import { QuestionResponse } from "../Models/QuestionModel";
 
 
 
-export function getQuestionsEasy(category: string): Promise<QuestionResponse>  {
+export function getQuestionsEasy(category: string, question:string,correctAnswer:string,incorrectAnswers:[]): Promise<QuestionResponse>  {
     return axios
 
-    
-
-    .get<QuestionResponse>("https://the-trivia-api.com/api/questions?&limit=10&region=US&&difficulty=easy" + category)
+    .get<QuestionResponse>("https://the-trivia-api.com/api/questions?&limit=10&region=US&&difficulty=easy",{params: {category, question,correctAnswer,incorrectAnswers:[]}})
     .then((response) => response.data);
 }
 
