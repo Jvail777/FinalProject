@@ -7,7 +7,7 @@ import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 
 import { Header } from './Components/Header';
 import { LeaderBoard } from './Components/LeaderBoard';
-import { Login } from './Components/Login';
+
 import { Footer } from "./Components/Footer";
 import { Game } from "./Components/New Components/Game";
 
@@ -24,7 +24,7 @@ function App() {
         <Header/>
         <Routes>
           <Route path="/LeaderBoard" element={<LeaderBoard />} />
-          <Route path="/Login" element={<Login/>}/>
+          
           <Route path="/Game" element={<Game/>}/>
         </Routes>
         <Footer/>

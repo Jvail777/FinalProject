@@ -2,8 +2,14 @@ import React, { useState } from "react";
 // import { getQuestionsEasy, getQuestionsMedium, getQuestionsHard } from "../Services/QuestionServices";
 // import { QuestionResponse } from "../Models/QuestionModel";
 import { Link } from "react-router-dom";
+import { GetQuestions } from "../../Services/QuestionServices";
 
-export function SetupGame() {
+interface ISetupGameProps{
+    SetQuestions: Function;
+}
+
+
+export function SetupGame(props:ISetupGameProps) {
     const [difficulty, setDifficulty] = useState<string>("easy");
     const [category, setCategory] = useState<string>("music");
 
@@ -15,9 +21,14 @@ export function SetupGame() {
     setCategory(event.target.value);
   };
 
+  const handleOnSubmit = (event: React.FormEvent<HTMLElement>) => {
+    event.preventDefault();
+    props.SetQuestions(GetQuestions(category,difficulty));
+  }
+
   return (
     <div className="SetupGame">
-        <form>
+        <form onSubmit={handleOnSubmit}>
       <select value={category} onChange={handleCategoryChange}>
         <option value="music">Music</option>
         <option value="history">History</option>
@@ -31,10 +42,8 @@ export function SetupGame() {
         <option value="medium">Medium</option>
         <option value="hard">Hard</option>
       </select>
+      <button type="submit" value="Submit">Start Game</button>
       </form>
-      <Link to="/QuestionCard">
-        {/* <button onClick={fetchQuestions}>Fetch Questions</button> */}
-      </Link>
     </div>
   );
 }
