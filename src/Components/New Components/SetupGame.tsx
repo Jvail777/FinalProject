@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import { getQuestionsEasy, getQuestionsMedium, getQuestionsHard } from "../Services/QuestionServices";
 // import { QuestionResponse } from "../Models/QuestionModel";
 import { Link } from "react-router-dom";
+import { AddQuestionChoices } from "../../helper/QuestionToQuestionChoice";
 import { GetQuestions } from "../../Services/QuestionServices";
 
 interface ISetupGameProps{
@@ -23,7 +24,10 @@ export function SetupGame(props:ISetupGameProps) {
 
   const handleOnSubmit = (event: React.FormEvent<HTMLElement>) => {
     event.preventDefault();
-    props.SetQuestions(GetQuestions(category,difficulty));
+    let questions = GetQuestions(category,difficulty);
+    var mappedQuestions = questions.then(data => data.data.map(x => AddQuestionChoices(x)));
+    console.log(mappedQuestions);
+    props.SetQuestions(mappedQuestions);
   }
 
   return (
@@ -42,7 +46,9 @@ export function SetupGame(props:ISetupGameProps) {
         <option value="medium">Medium</option>
         <option value="hard">Hard</option>
       </select>
+      
       <button type="submit" value="Submit">Start Game</button>
+      
       </form>
     </div>
   );
