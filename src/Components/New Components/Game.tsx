@@ -2,8 +2,6 @@ import {  useState } from "react";
 import { Question } from "../../Models/Question";
 import { RegisterUser } from "./RegisterUser";
 import { SetupGame } from "./SetupGame";
-import { Trivia } from "./Trivia";
-
 
 
 export function Game(){
@@ -15,11 +13,10 @@ export function Game(){
         function handleNextQuestion() {
             setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
           }
-          console.log(questions)
 
           function setNewQuestions(questions:Question[]){
-            setQuestions([...questions]);
             console.log(questions);
+            setQuestions([...questions]);
           }
 
     return(
