@@ -1,13 +1,13 @@
-import "../css/QuestionCard.css";
+// import "../css/QuestionCard.css";
 import { useState } from "react";
 import { Question } from "../../Models/Question";
 
 
 interface ITriviaProps{
-    
-}
+    questions: Question;
+};
 
-export function Trivia() {
+export function Trivia(props:ITriviaProps) {
  
 
 
@@ -15,8 +15,6 @@ export function Trivia() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
 
  
- 
-
 
   function handleNextQuestion() {
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
@@ -24,8 +22,8 @@ export function Trivia() {
   return (
     <div className="Trivia">
       <h2>Trivia Question:</h2>
-      <p>{questions[currentQuestionIndex]?.question}</p>
-      <p></p>
+      {/* <p>{props.questions[currentQuestionIndex]?.question}</p> */}
+      
 
       <button onClick={handleNextQuestion}>Next Question</button>
     </div>

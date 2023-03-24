@@ -10,6 +10,8 @@ import { LeaderBoard } from './Components/LeaderBoard';
 
 import { Footer } from "./Components/Footer";
 import { Game } from "./Components/New Components/Game";
+import { Trivia } from "./Components/New Components/Trivia";
+import { GetQuestions } from "./Services/QuestionServices";
 
 
 
@@ -24,7 +26,6 @@ function App() {
         <Header/>
         <Routes>
           <Route path="/LeaderBoard" element={<LeaderBoard />} />
-          
           <Route path="/Game" element={<Game/>}/>
         </Routes>
         <Footer/>

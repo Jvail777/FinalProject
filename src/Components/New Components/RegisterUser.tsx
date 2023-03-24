@@ -26,7 +26,7 @@ props.SetName(name)
           Insert Name to Begin!
           <input type="text" onChange={(e) => setName(e.target.value)} name="name" />
         </label>
-        <button type="submit" value="Submit" />
+        <button type="submit" value="Submit">Submit</button>
       </form>
     </div>
   );
