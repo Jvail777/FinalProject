@@ -1,25 +1,24 @@
-import * as React from 'react';
-import { useState } from 'react';
-import '../css/QuestionCard.css';
-import { useEffect } from "react";
 import "../css/QuestionCard.css";
+import { useState } from "react";
+import { useEffect } from "react";
 
-interface TriviaQuestion {
-  question: string;
-  answer: string;
-}
-// interface Question {
-//   category: string;
-//   type: string;
-//   difficulty: string;
-//   question: string;
-//   correct_answer: string;
-//   incorrect_answers: string[];
-// }
+export function Trivia() {
+  interface TriviaQuestion {
+    question: string;
+    answer: string;
+  }
+  // interface Question {
+  //   category: string;
+  //   type: string;
+  //   difficulty: string;
+  //   question: string;
+  //   correct_answer: string;
+  //   incorrect_answers: string[];
+  // }
 
-const TRIVIA_API_URL = "https://the-trivia-api.com/api/questions?categories=music&limit=10&region=US&";
+  const TRIVIA_API_URL =
+    "https://the-trivia-api.com/api/questions?categories=music&limit=10&region=US&";
 
-export function QuestionCard() {
   const [questions, setQuestions] = useState<TriviaQuestion[]>([]);
   // const [questions, setQuestions] = useState<Question[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
@@ -32,11 +31,11 @@ export function QuestionCard() {
       const data = await response.json();
       setQuestions(data);
     }
-  //   const fetchQuestions = async () => {
-  //     const response = await fetch(`${TRIVIA_API_URL}difficulty=${difficulty}`);
-  //     const data = await response.json();
-  //     setQuestions(data.results);
-  //   };
+    //   const fetchQuestions = async () => {
+    //     const response = await fetch(`${TRIVIA_API_URL}difficulty=${difficulty}`);
+    //     const data = await response.json();
+    //     setQuestions(data.results);
+    //   };
 
     fetchQuestions();
   }, []);
@@ -44,15 +43,13 @@ export function QuestionCard() {
   function handleNextQuestion() {
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
   }
-
   return (
-    <div className='trivia-card'>
+    <div className="Trivia">
       <h2>Trivia Question:</h2>
       <p>{questions[currentQuestionIndex]?.question}</p>
       <p></p>
-      
+
       <button onClick={handleNextQuestion}>Next Question</button>
     </div>
   );
-};
-
+}
