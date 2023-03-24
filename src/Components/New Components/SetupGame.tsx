@@ -24,10 +24,7 @@ export function SetupGame(props:ISetupGameProps) {
 
   const handleOnSubmit = (event: React.FormEvent<HTMLElement>) => {
     event.preventDefault();
-    let questions = GetQuestions(category,difficulty);
-    var mappedQuestions = questions.then(data => data.data.map(x => AddQuestionChoices(x)));
-    console.log(mappedQuestions);
-    props.SetQuestions(mappedQuestions);
+    GetQuestions(category,difficulty).then(x => props.SetQuestions(x));
   }
 
   return (
