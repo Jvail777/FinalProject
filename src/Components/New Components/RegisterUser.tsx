@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+
 interface IRegisterUserProps{
 SetName: Function; 
 }
@@ -12,9 +13,12 @@ export function RegisterUser(props:IRegisterUserProps) {
 
 const [name, setName] = useState('');
 
+
+
 function handleOnSubmit(event:React.FormEvent<HTMLElement>){
 event.preventDefault();
 props.SetName(name)
+
 }
 
 
