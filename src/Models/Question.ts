@@ -1,4 +1,4 @@
-export interface QuestionResponse {
+export interface Question {
     question: string,
     correctAnswer: string,
     incorrectAnswers: [],

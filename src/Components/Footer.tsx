@@ -28,7 +28,7 @@ export function Footer () {
         <Link to="/Dropdown">
         <button>Reset</button>
         </Link>
-        <Link to="/Login">
+        <Link to="/Game">
         <button>New Player</button>
         </Link>
         <button onClick={toggle}>How To Play</button>
