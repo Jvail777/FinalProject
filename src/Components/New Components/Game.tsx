@@ -4,6 +4,7 @@ import { RegisterUser } from "./RegisterUser";
 import { SetupGame } from "./SetupGame";
 
 
+
 export function Game(){
     
         const [name, setName] = useState('');
@@ -13,11 +14,12 @@ export function Game(){
         function handleNextQuestion() {
             setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
           }
+          console.log(questions)
 
     return(
         <div className="Game">
             {name==="" && <><RegisterUser SetName={setName}/></>}
-            {name!=="" && questions.length===0 &&<><SetupGame/></>}
+            {name!=="" && questions.length===0 &&<><SetupGame SetQuestions={setQuestions}/></>}
             {name!=="" && <p>{name}</p>} 
 
             
