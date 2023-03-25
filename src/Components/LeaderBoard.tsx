@@ -6,7 +6,6 @@ export function LeaderBoard() {
   return (
     <div className="LB-Header">
       <h1>LeaderBoard</h1>
-      {/* What appears when button is clicked? New Page? */}
       <div className="LB-Buttons">
         <button>Easy</button>
         <button>Medium</button>
