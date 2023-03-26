@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../../css/RegisterUser.css";
 
-export interface IRegisterUserProps {
+interface IRegisterUserProps{
   setName: Function
 }
 
