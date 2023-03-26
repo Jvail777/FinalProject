@@ -1,5 +1,5 @@
 // import "../css/QuestionCard.css";
-import { useState } from "react";
+import { ReactHTML, useState } from "react";
 import { Question } from "../../Models/Question";
 import { Card, CardBody, CardHeader, CardTitle } from "reactstrap";
 
@@ -14,23 +14,32 @@ export function QuestionCard(props:IQuestionCardProps) {
 
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
-  const [selected, setSelected] = useState<boolean>(false);
+  const [answer, setAnswer] = useState<string>("");
  
 
   function handleNextQuestion() {
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
   }
 
+  
+
   function onSubmitAnswer(){
     if(currentQuestionIndex !== 9){
+      checkAnswer();
       handleNextQuestion();
-      console.log(selected)
+      
     }
     else{
       console.log("out of questions")
     }
   }
 
+  function checkAnswer(){
+    if(answer === props.questions[currentQuestionIndex].correctAnswer){
+      alert("correct answer")
+    }
+    else{alert("incorrect answer")}
+  }
   
   
   let firstAnswer = props.questions[currentQuestionIndex].questionChoices[0]
@@ -45,11 +54,11 @@ export function QuestionCard(props:IQuestionCardProps) {
         <CardBody>
         <CardTitle>{props.questions[currentQuestionIndex].question}</CardTitle>
         
-          <input type = "radio" id = "firstAnswer" name = "radio" onChange = {selected}/>{firstAnswer.choice}
-          <input type = "radio" id = "secondAnswer" name = "radio"/>{secondAnswer.choice}
-          <input type = "radio" id = "thirdAnswer" name = "radio"/>{thirdAnswer.choice}
-          <input type = "radio" id= "fourthAnswer" name = "radio"/>{fourthAnswer.choice}
-        
+          <input type = "radio" id = "firstAnswer" name = "radio" value = {firstAnswer.choice} onChange = {e => setAnswer(e.target.value)}/>{firstAnswer.choice}
+          <input type = "radio" id = "secondAnswer" name = "radio" value = {secondAnswer.choice} onChange = {e => setAnswer(e.target.value)}/>{secondAnswer.choice}
+          <input type = "radio" id = "thirdAnswer" name = "radio" value = {thirdAnswer.choice} onChange = {e => setAnswer(e.target.value)}/>{thirdAnswer.choice}
+          <input type = "radio" id= "fourthAnswer" name = "radio" value = {fourthAnswer.choice} onChange = {e => setAnswer(e.target.value)}/>{fourthAnswer.choice}
+          
         <button onClick={onSubmitAnswer}>Submit Answer</button>
         </CardBody>
       </Card>
