@@ -52,15 +52,24 @@ export function QuestionCard(props:IQuestionCardProps) {
     <div className="QuestionCard">
       <h2>Trivia Question:</h2>
       <Card className="QuestionCard">
-        <CardBody>
-        <CardTitle>{props.questions[currentQuestionIndex].question}</CardTitle>
-          <input type = "radio" id = "firstAnswer" name = "radio" value = {firstAnswer.choice} onChange = {e => setAnswer(e.target.value)}/>{firstAnswer.choice}
-          <input type = "radio" id = "secondAnswer" name = "radio" value = {secondAnswer.choice} onChange = {e => setAnswer(e.target.value)}/>{secondAnswer.choice}
-          <input type = "radio" id = "thirdAnswer" name = "radio" value = {thirdAnswer.choice} onChange = {e => setAnswer(e.target.value)}/>{thirdAnswer.choice}
-          <input type = "radio" id= "fourthAnswer" name = "radio" value = {fourthAnswer.choice} onChange = {e => setAnswer(e.target.value)}/>{fourthAnswer.choice}
-          
-        <button onClick={onSubmitAnswer}>Submit Answer</button>
-        </CardBody>
+      <CardTitle className="CardTitle">{props.questions[currentQuestionIndex].question}</CardTitle>
+<label>
+  <input type="radio" name="radio" value={firstAnswer.choice} onChange={e => setAnswer(e.target.value)} />
+  {firstAnswer.choice}
+</label>
+<label>
+  <input type="radio" name="radio" value={secondAnswer.choice} onChange={e => setAnswer(e.target.value)} />
+  {secondAnswer.choice}
+</label>
+<label>
+  <input type="radio" name="radio" value={thirdAnswer.choice} onChange={e => setAnswer(e.target.value)} />
+  {thirdAnswer.choice}
+</label>
+<label>
+  <input type="radio" name="radio" value={fourthAnswer.choice} onChange={e => setAnswer(e.target.value)} />
+  {fourthAnswer.choice}
+</label>
+<button onClick={onSubmitAnswer}>Submit Answer</button>
       </Card>
     </div>
   );

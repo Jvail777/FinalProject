@@ -32,6 +32,7 @@
     padding: 20px;
     position: relative;
     transition: background-color 0.2s ease;
+    margin-bottom: 0.5em;
   }
   input[type="radio"] {
     margin: 10px;
@@ -49,6 +50,26 @@
     color: #fff;
   }
 
-  button:hover {
-    background-color: #CF6098;
-  }
+.CardTitle {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+
+input[type="radio"] {
+  margin-right: 0.5em;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0.25em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0069d9;
+}
