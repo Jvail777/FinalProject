@@ -25,13 +25,17 @@ export function Game(){
 
           
           function setPlayerName(name:string){
-            console.log(addPlayer({name, score}));
+            const testplayer = addPlayer({name, score});
+            console.log(testplayer);
+            console.log(name)
           }
+
+          
 
     return(
         <div className="Game">
-            {/* {name==="" && <><RegisterUser SetName={setPlayerName}/></>} */}
-            {name==="" && questions.length===0 &&<><RegisterUser SetName={setPlayerName}/><SetupGame SetQuestions={setNewQuestions}/></>}
+            {/* {name==="" && <><RegisterUser setName={setPlayerName}/></>} */}
+            {name==="" && questions.length===0 &&<><RegisterUser setName={setPlayerName}/><SetupGame SetQuestions={setNewQuestions}/></>}
             {/* {name!=="" && <p>{name}</p>}  */}
             {questions.length !== 0 && <><QuestionCard questions = {questions}/></>}
             

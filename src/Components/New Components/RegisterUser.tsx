@@ -1,9 +1,6 @@
 import { useState } from "react";
 import "../../css/RegisterUser.css";
 
-interface IRegisterUserProps {
-  SetName: Function;
-}
 
 export function RegisterUser(props: IRegisterUserProps) {
   const [name, setName] = useState("");
