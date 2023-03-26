@@ -1,7 +1,8 @@
-// import "../css/QuestionCard.css";
-import { ReactHTML, useState } from "react";
+import { useState } from "react";
 import { Question } from "../../Models/Question";
-import { Card, CardBody, CardHeader, CardTitle } from "reactstrap";
+import { Card, CardBody, CardTitle } from "reactstrap";
+import "../../css/QuestionCard.css";
+
 
 
 interface IQuestionCardProps{
@@ -53,7 +54,6 @@ export function QuestionCard(props:IQuestionCardProps) {
       <Card className="QuestionCard">
         <CardBody>
         <CardTitle>{props.questions[currentQuestionIndex].question}</CardTitle>
-        
           <input type = "radio" id = "firstAnswer" name = "radio" value = {firstAnswer.choice} onChange = {e => setAnswer(e.target.value)}/>{firstAnswer.choice}
           <input type = "radio" id = "secondAnswer" name = "radio" value = {secondAnswer.choice} onChange = {e => setAnswer(e.target.value)}/>{secondAnswer.choice}
           <input type = "radio" id = "thirdAnswer" name = "radio" value = {thirdAnswer.choice} onChange = {e => setAnswer(e.target.value)}/>{thirdAnswer.choice}

@@ -18,7 +18,7 @@ export function LeaderBoard() {
   return (
     <div className="LB-Header">
       <h1>LeaderBoard</h1>
-      
+
       <div className="LB-Buttons">
         <button>Easy</button>
         <button>Medium</button>
