@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { AddQuestionChoices } from "../../helper/QuestionToQuestionChoice";
 import { GetQuestions } from "../../Services/QuestionServices";
+import "../../css/SetupGame.css";
 
 interface ISetupGameProps{
     SetQuestions: Function;
@@ -30,7 +31,7 @@ export function SetupGame(props:ISetupGameProps) {
   return (
     <div className="SetupGame">
         <form onSubmit={handleOnSubmit}>
-      <select value={category} onChange={handleCategoryChange}>
+      <select className="dropdown-category" value={category} onChange={handleCategoryChange}>
         <option value="music">Music</option>
         <option value="history">History</option>
         <option value="film and tv">Film and TV</option>
@@ -38,7 +39,7 @@ export function SetupGame(props:ISetupGameProps) {
         <option value="society and culture">Society and Culture</option>
         <option value="sports and leisure">Sports and Leisure</option>
       </select>
-      <select value={difficulty} onChange={handleDifficultyChange}>
+      <select className="dropdown-difficulty" value={difficulty} onChange={handleDifficultyChange}>
         <option value="easy">Easy</option>
         <option value="medium">Medium</option>
         <option value="hard">Hard</option>

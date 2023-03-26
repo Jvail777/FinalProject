@@ -1,7 +1,7 @@
-// import "../css/QuestionCard.css";
 import { useState } from "react";
 import { Question } from "../../Models/Question";
 import { Card, CardBody, CardTitle } from "reactstrap";
+import "../../css/QuestionCard.css";
 
 
 interface IQuestionCardProps{
@@ -26,7 +26,7 @@ export function QuestionCard(props:IQuestionCardProps) {
       handleNextQuestion();
     }
     else{
-      
+      console.log("out of questions")
     }
   }
 
@@ -39,21 +39,21 @@ export function QuestionCard(props:IQuestionCardProps) {
   
   return (
     <div className="QuestionCard">
-      <form>
+   
       <h2>Trivia Question:</h2>
       <Card className="QuestionCard">
         <CardBody>
         <CardTitle>{props.questions[currentQuestionIndex].question}</CardTitle>
         
-          <input type = "radio" id = "firstAnswer" />{firstAnswer.choice}
-          <input type = "radio" id = "secondAnswer" />{secondAnswer.choice}
-          <input type = "radio" id = "thirdAnswer" />{thirdAnswer.choice}
-          <input type = "radio" id= "fourthAnswer"/>{fourthAnswer.choice}
+          <input type = "radio" id = "firstAnswer" name="radio-button"/>{firstAnswer.choice}
+          <input type = "radio" id = "secondAnswer" name="radio-button"/>{secondAnswer.choice}
+          <input type = "radio" id = "thirdAnswer" name="radio-button" />{thirdAnswer.choice}
+          <input type = "radio" id= "fourthAnswer" name="radio-button"/>{fourthAnswer.choice}
         
-        <button onClick={handleNextQuestion}>Submit Answer</button>
+        <button onClick={onSubmit}>Submit Answer</button>
         </CardBody>
       </Card>
-      </form>
+     
     </div>
   );
 }

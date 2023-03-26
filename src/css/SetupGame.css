@@ -1,0 +1,36 @@
+.SetupGame {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+ button {
+    background-color: orange;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    padding: 7px 20px;
+    margin: 20px;
+    border: none;
+    border-radius: 9px;
+}
+
+.dropdown-category {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-difficulty {
+    margin-left: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}

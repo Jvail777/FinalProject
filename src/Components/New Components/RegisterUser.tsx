@@ -24,7 +24,7 @@ export function RegisterUser(props: IRegisterUserProps) {
             placeholder="Insert Name to Begin!"
           />
         </label>
-        <button type="submit" value="Submit">
+        <button className="submit-btn" type="submit" value="Submit">
           Submit
         </button>
       </form>
