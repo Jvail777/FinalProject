@@ -1,7 +1,7 @@
 // import "../css/QuestionCard.css";
 import { useState } from "react";
 import { Question } from "../../Models/Question";
-import { Card, CardBody, CardTitle } from "reactstrap";
+import { Card, CardBody, CardHeader, CardTitle } from "reactstrap";
 
 
 interface IQuestionCardProps{
@@ -14,23 +14,24 @@ export function QuestionCard(props:IQuestionCardProps) {
 
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
-  const [toggleSelected, setToggleSelected] = useState<boolean>(false);
+  const [selected, setSelected] = useState<boolean>(false);
  
 
   function handleNextQuestion() {
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
   }
 
-  function onSubmit(){
+  function onSubmitAnswer(){
     if(currentQuestionIndex !== 9){
       handleNextQuestion();
+      console.log(selected)
     }
     else{
-      
+      console.log("out of questions")
     }
   }
 
-  //onClick = {() => setToggleSelected(!toggleSelected)}
+  
   
   let firstAnswer = props.questions[currentQuestionIndex].questionChoices[0]
   let secondAnswer = props.questions[currentQuestionIndex].questionChoices[1]
@@ -39,21 +40,19 @@ export function QuestionCard(props:IQuestionCardProps) {
   
   return (
     <div className="QuestionCard">
-      <form>
       <h2>Trivia Question:</h2>
       <Card className="QuestionCard">
         <CardBody>
         <CardTitle>{props.questions[currentQuestionIndex].question}</CardTitle>
         
-          <input type = "radio" id = "firstAnswer" />{firstAnswer.choice}
-          <input type = "radio" id = "secondAnswer" />{secondAnswer.choice}
-          <input type = "radio" id = "thirdAnswer" />{thirdAnswer.choice}
-          <input type = "radio" id= "fourthAnswer"/>{fourthAnswer.choice}
+          <input type = "radio" id = "firstAnswer" name = "radio" onChange = {selected}/>{firstAnswer.choice}
+          <input type = "radio" id = "secondAnswer" name = "radio"/>{secondAnswer.choice}
+          <input type = "radio" id = "thirdAnswer" name = "radio"/>{thirdAnswer.choice}
+          <input type = "radio" id= "fourthAnswer" name = "radio"/>{fourthAnswer.choice}
         
-        <button onClick={handleNextQuestion}>Submit Answer</button>
+        <button onClick={onSubmitAnswer}>Submit Answer</button>
         </CardBody>
       </Card>
-      </form>
     </div>
   );
 }

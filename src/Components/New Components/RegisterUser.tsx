@@ -2,7 +2,7 @@ import { useState } from "react";
 
 
 interface IRegisterUserProps{
-SetName: Function; 
+setName: Function; 
 }
 
 
@@ -17,7 +17,7 @@ const [name, setName] = useState('');
 
 function handleOnSubmit(event:React.FormEvent<HTMLElement>){
 event.preventDefault();
-props.SetName(name)
+props.setName(name)
 
 }
 
