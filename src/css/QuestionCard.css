@@ -34,8 +34,8 @@
     transition: background-color 0.2s ease;
   }
   input[type="radio"] {
-    /* display: none; */
     margin: 10px;
+    width: auto;
   }
   span {
     background-color: #F2F2F2;
@@ -48,6 +48,7 @@
     background-color: #7FC6A4;
     color: #fff;
   }
-  /* button:hover {
+
+  button:hover {
     background-color: #CF6098;
-  } */
+  }

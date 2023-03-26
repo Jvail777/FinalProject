@@ -2,9 +2,10 @@
     display: flex;
     justify-content: center;
     padding-top: 30px;
+    margin-left: 50px;
 }
 
- button {
+.SetupGame button {
     background-color: orange;
     color: rgb(0, 0, 0);
     font-size: 20px;
@@ -14,8 +15,12 @@
     border-radius: 9px;
 }
 
+button {
+    background-color: orange;
+}
 .dropdown-category {
     padding: 10px;
+    margin-right: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #fff;
@@ -25,7 +30,7 @@
 }
 
 .dropdown-difficulty {
-    margin-left: 20px;
+    margin-right: 20px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
