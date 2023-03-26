@@ -3,6 +3,7 @@ import { Question } from "../../Models/Question";
 import { addPlayer } from "../../Services/PlayerServices";
 import { RegisterUser } from "./RegisterUser";
 import { SetupGame } from "./SetupGame";
+import { QuestionCard } from "./QuestionCard";
 
 
 export function Game(){
@@ -29,9 +30,10 @@ export function Game(){
 
     return(
         <div className="Game">
-            {name==="" && <><RegisterUser SetName={setPlayerName}/></>}
-            {name!=="" && questions.length===0 &&<><SetupGame SetQuestions={setNewQuestions}/></>}
-            {name!=="" && <p>{name}</p>} 
+            {/* {name==="" && <><RegisterUser SetName={setPlayerName}/></>} */}
+            {name==="" && questions.length===0 &&<><RegisterUser SetName={setPlayerName}/><SetupGame SetQuestions={setNewQuestions}/></>}
+            {/* {name!=="" && <p>{name}</p>}  */}
+            {questions.length !== 0 && <><QuestionCard questions = {questions}/></>}
             
         </div>
     )
