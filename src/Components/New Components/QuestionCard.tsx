@@ -14,13 +14,23 @@ export function QuestionCard(props:IQuestionCardProps) {
 
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
-
+  const [toggleSelected, setToggleSelected] = useState<boolean>(false);
  
 
   function handleNextQuestion() {
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
   }
 
+  function onSubmit(){
+    if(currentQuestionIndex !== 9){
+      handleNextQuestion();
+    }
+    else{
+      
+    }
+  }
+
+  //onClick = {() => setToggleSelected(!toggleSelected)}
   
   let firstAnswer = props.questions[currentQuestionIndex].questionChoices[0]
   let secondAnswer = props.questions[currentQuestionIndex].questionChoices[1]
@@ -29,19 +39,21 @@ export function QuestionCard(props:IQuestionCardProps) {
   
   return (
     <div className="QuestionCard">
+      <form>
       <h2>Trivia Question:</h2>
       <Card className="QuestionCard">
         <CardBody>
         <CardTitle>{props.questions[currentQuestionIndex].question}</CardTitle>
-        <div>
-          <button>{firstAnswer.choice}</button>
-          <button>{secondAnswer.choice}</button>
-          <button>{thirdAnswer.choice}</button>
-          <button>{fourthAnswer.choice}</button>
-        </div>
-        <button onClick={handleNextQuestion}>Next Question</button>
+        
+          <input type = "radio" onChange = {() => setToggleSelected(!toggleSelected)}/>{firstAnswer.choice}
+          <input type = "radio"/>{secondAnswer.choice}
+          <input type = "radio"/>{thirdAnswer.choice}
+          <input type = "radio"/>{fourthAnswer.choice}
+        
+        <button onClick={handleNextQuestion}>Submit Answer</button>
         </CardBody>
       </Card>
+      </form>
     </div>
   );
 }
