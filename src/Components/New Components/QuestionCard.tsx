@@ -45,10 +45,10 @@ export function QuestionCard(props:IQuestionCardProps) {
         <CardBody>
         <CardTitle>{props.questions[currentQuestionIndex].question}</CardTitle>
         
-          <input type = "radio" onChange = {() => setToggleSelected(!toggleSelected)}/>{firstAnswer.choice}
-          <input type = "radio"/>{secondAnswer.choice}
-          <input type = "radio"/>{thirdAnswer.choice}
-          <input type = "radio"/>{fourthAnswer.choice}
+          <input type = "radio" id = "firstAnswer" />{firstAnswer.choice}
+          <input type = "radio" id = "secondAnswer" />{secondAnswer.choice}
+          <input type = "radio" id = "thirdAnswer" />{thirdAnswer.choice}
+          <input type = "radio" id= "fourthAnswer"/>{fourthAnswer.choice}
         
         <button onClick={handleNextQuestion}>Submit Answer</button>
         </CardBody>
