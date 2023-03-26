@@ -1,13 +1,16 @@
 import { useState } from "react";
 import "../../css/RegisterUser.css";
 
+interface IRegisterUserProps{
+  setName: Function
+}
 
 export function RegisterUser(props: IRegisterUserProps) {
   const [name, setName] = useState("");
 
   function handleOnSubmit(event: React.FormEvent<HTMLElement>) {
     event.preventDefault();
-    props.SetName(name);
+    props.setName(name);
   }
 
   return (
