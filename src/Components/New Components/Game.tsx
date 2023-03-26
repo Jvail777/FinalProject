@@ -5,7 +5,6 @@ import { RegisterUser } from "./RegisterUser";
 import { SetupGame } from "./SetupGame";
 import { QuestionCard } from "./QuestionCard";
 
-
 export function Game(){
     
         const [name, setName] = useState('');
