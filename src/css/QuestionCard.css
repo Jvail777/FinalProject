@@ -1,54 +1,41 @@
-.QuestionCard {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin: 20px auto;
-    max-width: 600px;
-    padding: 40px;
-    text-align: center;
-  }
-  h2 {
-    color: #333;
-    font-family: "Montserrat", sans-serif;
-    font-size: 36px;
-    margin-bottom: 40px;
-  }
-  p{
-    font-size: 24px;
-  }
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  /* li {
-    margin: 20px;
-  } */
-  label {
-    cursor: pointer;
-    display: block;
-    font-family: "Open Sans", sans-serif;
-    font-size: 24px;
-    padding: 20px;
-    position: relative;
-    transition: background-color 0.2s ease;
-    margin-bottom: 0.5em;
-  }
-  input[type="radio"] {
-    margin: 10px;
-    width: auto;
-  }
-  span {
-    background-color: #F2F2F2;
-    border-radius: 10px;
-    display: block;
-    padding: 20px;
-    transition: background-color 0.2s ease;
-  }
-  input[type="radio"]:checked + span {
-    background-color: #7FC6A4;
-    color: #fff;
-  }
+.QuestionCard-Card {
+  font-size: .75em;
+  display: flex;
+}
+
+.QuestionCard-Container {
+  background-color: white;
+  border-radius: 10px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+  margin: 20px auto;
+  padding: 40px;
+  text-align: center;
+  max-width: 50%;
+  max-height: 80vh;
+}
+
+
+label {
+  cursor: pointer;
+  display: block;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5em;
+  padding: 8px;
+  position: relative;
+  transition: background-color 0.2s ease;
+  margin-bottom: 0.5em;
+  text-align: start;
+}
+
+input[type="radio"] {
+  margin: 10px;
+  width: auto;
+}
+
+input[type="radio"]:checked+span {
+  background-color: #7FC6A4;
+  color: #fff;
+}
 
 .CardTitle {
   font-size: 1.5em;
@@ -57,9 +44,9 @@
 }
 
 
-input[type="radio"] {
+/* input[type="radio"] {
   margin-right: 0.5em;
-}
+} */
 
 button {
   background-color: #007bff;
@@ -68,8 +55,11 @@ button {
   border-radius: 0.25em;
   padding: 0.5em 1em;
   cursor: pointer;
+  width: 150px;
+  font-size: .75em;
+  text-align: center;
 }
 
-button:hover {
+/* button:hover {
   background-color: #0069d9;
-}
+} */
