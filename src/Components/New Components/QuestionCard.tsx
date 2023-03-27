@@ -7,6 +7,8 @@ import "../../css/QuestionCard.css";
 
 interface IQuestionCardProps{
     questions: Question[];
+    updateScore: Function;
+    onGameEnd: Function;
 };
 
 export function QuestionCard(props:IQuestionCardProps) {
@@ -23,7 +25,6 @@ export function QuestionCard(props:IQuestionCardProps) {
   }
 
   
-
   function onSubmitAnswer(){
     if(currentQuestionIndex !== 9){
       checkAnswer();
@@ -32,14 +33,17 @@ export function QuestionCard(props:IQuestionCardProps) {
     }
     else{
       console.log("out of questions")
+      props.onGameEnd();
     }
   }
 
   function checkAnswer(){
     if(answer === props.questions[currentQuestionIndex].correctAnswer){
       alert("correct answer")
+      props.updateScore();
     }
-    else{alert("incorrect answer")}
+    else{alert("incorrect answer")
+    }
   }
   
   

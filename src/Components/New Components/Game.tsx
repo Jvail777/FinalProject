@@ -24,10 +24,18 @@ export function Game(){
 
           
           function setPlayerName(name:string){
-            const testplayer = addPlayer({name, score});
-            console.log(testplayer);
-            console.log(name)
+            localStorage.setItem("playerName", name);
           }
+
+          function saveUserData(){
+            const userName = localStorage.getItem("playerName");
+            addPlayer({name: userName? userName: "", score});
+          }
+
+        function updateScore() {
+            setScore(score +1)
+            console.log(score);
+        }
 
           
 
@@ -36,7 +44,7 @@ export function Game(){
             {/* {name==="" && <><RegisterUser setName={setPlayerName}/></>} */}
             {name==="" && questions.length===0 &&<><RegisterUser setName={setPlayerName}/><SetupGame SetQuestions={setNewQuestions}/></>}
             {/* {name!=="" && <p>{name}</p>}  */}
-            {questions.length !== 0 && <><QuestionCard questions = {questions}/></>}
+            {questions.length !== 0 && <><QuestionCard questions = {questions} updateScore={updateScore} onGameEnd={saveUserData}/></>}
             
         </div>
     )
