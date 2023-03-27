@@ -25,9 +25,9 @@ export function Footer () {
             <Link to="/LeaderBoard">
         <button className='footer-button'>LeaderBoards</button>
         </Link>
-        <Link to="/Dropdown">
+        {/* <Link to="/Dropdown">
         <button className='footer-button'>Reset</button>
-        </Link>
+        </Link> */}
         <Link to="/Game">
         <button className='footer-button'>New Player</button>
         </Link>
