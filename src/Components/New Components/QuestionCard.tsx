@@ -15,11 +15,13 @@ export function QuestionCard(props: IQuestionCardProps) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [answer, setAnswer] = useState<string>("");
   const [progressBar, setProgressBar] = useState<number>(1);
+  
 
   const navigate = useNavigate();
   function handleNextQuestion() {
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
   }
+
 
   function onSubmitAnswer() {
     if(currentQuestionIndex === 9){
@@ -34,16 +36,16 @@ export function QuestionCard(props: IQuestionCardProps) {
       setProgressBar(progressBar + 1)
     } else {
       console.log("out of questions");
-      // props.onGameEnd();
     }
+    setAnswer("");
   }
 
   function checkAnswer() {
     if (answer === props.questions[currentQuestionIndex].correctAnswer) {
-      alert("correct answer");
+      // alert("correct answer");
       props.updateScore();
     } else {
-      alert("incorrect answer");
+      // alert("incorrect answer");
     }
   }
 
@@ -66,6 +68,7 @@ export function QuestionCard(props: IQuestionCardProps) {
               name="radio"
               value={firstAnswer.choice}
               onChange={(e) => setAnswer(e.target.value)}
+              checked={answer === firstAnswer.choice}
             />
             {firstAnswer.choice}
           </label>
@@ -75,6 +78,7 @@ export function QuestionCard(props: IQuestionCardProps) {
               name="radio"
               value={secondAnswer.choice}
               onChange={(e) => setAnswer(e.target.value)}
+              checked={answer === secondAnswer.choice}
             />
             {secondAnswer.choice}
           </label>
@@ -84,6 +88,7 @@ export function QuestionCard(props: IQuestionCardProps) {
               name="radio"
               value={thirdAnswer.choice}
               onChange={(e) => setAnswer(e.target.value)}
+              checked={answer === thirdAnswer.choice}
             />
             {thirdAnswer.choice}
           </label>
@@ -93,6 +98,7 @@ export function QuestionCard(props: IQuestionCardProps) {
               name="radio"
               value={fourthAnswer.choice}
               onChange={(e) => setAnswer(e.target.value)}
+              checked={answer === fourthAnswer.choice}
             />
             {fourthAnswer.choice}
           </label>
