@@ -11,6 +11,7 @@ import { LeaderBoard } from './Components/LeaderBoard';
 import { Footer } from "./Components/Footer";
 import { Game } from "./Components/New Components/Game";
 import { GetQuestions } from "./Services/QuestionServices";
+import { SetupGame } from "./Components/New Components/SetupGame";
 
 
 
