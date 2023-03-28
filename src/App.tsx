@@ -32,7 +32,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Game/>}/>
           <Route path="/LeaderBoard" element={<LeaderBoard />} />
-          <Route path="/ScoreCard" element={<ScoreCard/>}/>
+
+          <Route path='/ScoreCard' element={<ScoreCard />} />
+
         </Routes>
         <Footer/>
         </AuthContextProvider>
