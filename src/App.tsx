@@ -25,8 +25,8 @@ function App() {
 
         <Header/>
         <Routes>
+          <Route path="/" element={<Game/>}/>
           <Route path="/LeaderBoard" element={<LeaderBoard />} />
-          <Route path="/Game" element={<Game/>}/>
         </Routes>
         <Footer/>
       </div>
