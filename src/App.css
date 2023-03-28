@@ -1,0 +1,39 @@
+@media screen and (max-width: 480px){
+
+.Game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.Footer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.QuestionCard-Card card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 15px;
+}
+
+.Header h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Header p  {
+    visibility:hidden;
+}
+
+}

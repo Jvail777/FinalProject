@@ -1,6 +1,5 @@
-import React from "react";
-import logo from "./logo.svg";
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
+import './App.css';
 // import './css/TriviaCard.css';
 // import './css/Header.css';
 
