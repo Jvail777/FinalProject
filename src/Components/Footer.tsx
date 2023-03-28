@@ -28,7 +28,7 @@ export function Footer () {
         <button className='footer-button'>Reset</button>
         </Link> */}
         <Link to="/">
-        <button className='footer-button'>New Player</button>
+        <button className='footer-button'>New Game</button>
         </Link>
         <button className='footer-button' onClick={toggle}>How To Play</button>
         <Modal isOpen = {modal} toggle = {toggle} backdrop = {true} backdropClassName = "Modal" centered = {true}>
