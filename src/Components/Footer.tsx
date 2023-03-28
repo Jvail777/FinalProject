@@ -28,7 +28,7 @@ export function Footer () {
         {/* <Link to="/Dropdown">
         <button className='footer-button'>Reset</button>
         </Link> */}
-        <Link to="/Game">
+        <Link to="/">
         <button className='footer-button'>New Player</button>
         </Link>
         <button className='footer-button' onClick={toggle}>How To Play</button>
