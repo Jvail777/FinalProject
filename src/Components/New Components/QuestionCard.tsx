@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Question } from "../../Models/Question";
 import { Card, CardBody, CardTitle } from "reactstrap";
 import "../../css/QuestionCard.css";
+import { useNavigate } from 'react-router-dom'
 
 interface IQuestionCardProps {
   questions: Question[];
@@ -14,17 +15,23 @@ export function QuestionCard(props: IQuestionCardProps) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [answer, setAnswer] = useState<string>("");
 
+  const navigate = useNavigate();
   function handleNextQuestion() {
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
   }
 
   function onSubmitAnswer() {
-    if (currentQuestionIndex !== 9) {
+    if(currentQuestionIndex === 9){
+      checkAnswer();
+      props.onGameEnd();
+      navigate('/ScoreCard');
+    }
+    else if (currentQuestionIndex !== 9) {
       checkAnswer();
       handleNextQuestion();
     } else {
       console.log("out of questions");
-      props.onGameEnd();
+      // props.onGameEnd();
     }
   }
 
@@ -49,7 +56,6 @@ export function QuestionCard(props: IQuestionCardProps) {
         <CardTitle className="CardTitle">
           {props.questions[currentQuestionIndex].question}
         </CardTitle>
-      
           <label>
             <input
               type="radio"

@@ -24,7 +24,8 @@ export function Game(){
 
           
           function setPlayerName(name:string){
-            localStorage.setItem("playerName", name);
+            setName(name);
+            localStorage.setItem("playerName",name);
           }
 
           function saveUserData(){
@@ -41,9 +42,9 @@ export function Game(){
 
     return(
         <div className="Game">
-            {/* {name==="" && <><RegisterUser setName={setPlayerName}/></>} */}
-            {name==="" && questions.length===0 &&<><RegisterUser setName={setPlayerName}/><SetupGame SetQuestions={setNewQuestions}/></>}
-            {/* {name!=="" && <p>{name}</p>}  */}
+            {name==="" && <><RegisterUser setName={setPlayerName}/></>}
+            {name!=="" && questions.length===0 &&<><SetupGame SetQuestions={setNewQuestions}/></>}
+            {name!=="" && <p>{name}</p>} 
             {questions.length !== 0 && <><QuestionCard questions = {questions} updateScore={updateScore} onGameEnd={saveUserData}/></>}
             
         </div>
