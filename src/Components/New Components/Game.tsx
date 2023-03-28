@@ -45,8 +45,8 @@ export function Game(){
 
     return(
         <div className="Game">
-            {user == null && <><Authentication/></>}
-            {user!== null && questions.length===0 &&<><SetupGame SetQuestions={setNewQuestions}/></>}
+            {<Authentication/>}
+            {user!== null && questions.length===0 &&<><SetupGame SetQuestions={setNewQuestions}/> </>}
             {name!=="" && <p>{name}</p>} 
             {questions.length !== 0 && <><QuestionCard questions = {questions} updateScore={updateScore} onGameEnd={saveUserData}/></>}
             
