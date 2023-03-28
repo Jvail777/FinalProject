@@ -1,8 +1,4 @@
 import React, { useState } from "react";
-// import { getQuestionsEasy, getQuestionsMedium, getQuestionsHard } from "../Services/QuestionServices";
-// import { QuestionResponse } from "../Models/QuestionModel";
-import { Link } from "react-router-dom";
-import { AddQuestionChoices } from "../../helper/QuestionToQuestionChoice";
 import { GetQuestions } from "../../Services/QuestionServices";
 import "../../css/SetupGame.css";
 

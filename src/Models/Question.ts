@@ -6,4 +6,5 @@ export interface Question {
     incorrectAnswers: string[],
     difficulty: string,
     questionChoices: QuestionChoice[]
+    category: string
 }

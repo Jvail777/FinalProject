@@ -1,8 +1,6 @@
-import * as React from "react";
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import "../css/LeaderBoard.css";
-import { PlayerModel } from "../Models/PlayerModel";
 import { getLeaderboard } from "../Services/PlayerServices";
 
 export function LeaderBoard() {
