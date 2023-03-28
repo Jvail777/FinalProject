@@ -2,7 +2,7 @@ import { Card, CardBody, CardTitle, Progress } from "reactstrap";
 import "../css/ScoreCard.css"
 
 // interface IScoreCardProps {
-  
+//   SetupGame:Function
 // }
 
 export function ScoreCard () {
@@ -12,8 +12,8 @@ export function ScoreCard () {
       <Card className="ScoreCard-Card"> </Card>
         <CardTitle className="CardTitle">
         </CardTitle>
-        <p>Category Selected: {}</p>
-        <p>Difficulty Selected: {}</p>
+        <p>Category Selected: </p>
+        <p>Difficulty Selected: </p>
         <p>Your Score : *Insert Score Here*</p>
     </div>
   );
