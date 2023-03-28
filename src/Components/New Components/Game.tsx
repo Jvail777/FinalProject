@@ -1,15 +1,18 @@
-import {  useState } from "react";
+import {  useContext, useState } from "react";
 import { Question } from "../../Models/Question";
 import { addPlayer } from "../../Services/PlayerServices";
 import { RegisterUser } from "./RegisterUser";
 import { SetupGame } from "./SetupGame";
 import { QuestionCard } from "./QuestionCard";
+import { Authentication } from "./Authentication";
+import AuthContext from "../../context/AuthContext";
 
 export function Game(){
     
         const [name, setName] = useState('');
         const [questions, setQuestions] = useState<Question[]>([]);
         const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
+        const { user } = useContext(AuthContext);
 
         const [score, setScore] = useState(0);
  
@@ -42,8 +45,8 @@ export function Game(){
 
     return(
         <div className="Game">
-            {name==="" && <><RegisterUser setName={setPlayerName}/></>}
-            {name!=="" && questions.length===0 &&<><SetupGame SetQuestions={setNewQuestions}/></>}
+            {user == null && <><Authentication/></>}
+            {user!== null && questions.length===0 &&<><SetupGame SetQuestions={setNewQuestions}/></>}
             {name!=="" && <p>{name}</p>} 
             {questions.length !== 0 && <><QuestionCard questions = {questions} updateScore={updateScore} onGameEnd={saveUserData}/></>}
             

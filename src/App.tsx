@@ -12,6 +12,7 @@ import { Footer } from "./Components/Footer";
 import { Game } from "./Components/New Components/Game";
 import { GetQuestions } from "./Services/QuestionServices";
 import { SetupGame } from "./Components/New Components/SetupGame";
+import AuthContextProvider from "./context/AuthContextProvider";
 
 
 
@@ -22,13 +23,15 @@ function App() {
     <BrowserRouter>
       <div className="App">
      
-
+        <AuthContextProvider >
         <Header/>
         <Routes>
           <Route path="/" element={<Game/>}/>
           <Route path="/LeaderBoard" element={<LeaderBoard />} />
         </Routes>
         <Footer/>
+        </AuthContextProvider>
+        
       </div>
 
     </BrowserRouter>
