@@ -9,5 +9,10 @@ export function AddQuestionChoices(question: Question) {
   for (let incorrect of question.incorrectAnswers) {
     question.questionChoices.push({ choice: incorrect, isCorrect: false });
   }
+  question.questionChoices.sort(() => (Math.random() > 0.5) ? 1 : -1)
+
   return question;
+  
 }
+
+
