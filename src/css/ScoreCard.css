@@ -1,0 +1,10 @@
+.ScoreCard {
+background-color: white;
+border-radius: 10px;
+/* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+margin: 20px auto;
+padding: 40px;
+text-align: center;
+max-width: 50%;
+max-height: 80vh;
+}
