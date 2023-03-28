@@ -1,6 +1,13 @@
+
+
 export interface PlayerModel {
-    id?: number,
+    id?: string,
     name: string,
-    difficulty?: string,
-    score?: number,
+    games?: [
+        {
+            category: string,
+            difficulty: string,
+            score: number
+        }
+    ]
 }

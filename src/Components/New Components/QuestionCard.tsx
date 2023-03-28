@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Question } from "../../Models/Question";
-import { Card, CardBody, CardTitle, Progress } from "reactstrap";
+import { Card, CardTitle, Progress } from "reactstrap";
 import "../../css/QuestionCard.css";
 import { useNavigate } from 'react-router-dom'
 
@@ -42,10 +42,8 @@ export function QuestionCard(props: IQuestionCardProps) {
 
   function checkAnswer() {
     if (answer === props.questions[currentQuestionIndex].correctAnswer) {
-      // alert("correct answer");
       props.updateScore();
     } else {
-      // alert("incorrect answer");
     }
   }
 
