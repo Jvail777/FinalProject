@@ -3,6 +3,7 @@ import { Question } from "../../Models/Question";
 import { Card, CardTitle, Progress } from "reactstrap";
 import "../../css/QuestionCard.css";
 import { useNavigate } from 'react-router-dom'
+import { ScoreCard } from "../ScoreCard";
 
 interface IQuestionCardProps {
   questions: Question[];
@@ -18,6 +19,7 @@ export function QuestionCard(props: IQuestionCardProps) {
   
 
   const navigate = useNavigate();
+
   function handleNextQuestion() {
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
   }
