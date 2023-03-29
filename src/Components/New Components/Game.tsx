@@ -4,9 +4,14 @@ import { addPlayer } from "../../Services/PlayerServices";
 import { SetupGame } from "./SetupGame";
 import { QuestionCard } from "./QuestionCard";
 import AuthContext from "../../context/AuthContext";
+import { ScoreCard } from "../ScoreCard";
 
 
-export function Game(){
+interface IGameProps{
+  GoToScoreCard: Function;
+}
+
+export function Game(props:IGameProps){
     
         // const [name, setName] = useState('');
         const [questions, setQuestions] = useState<Question[]>([]);
@@ -17,6 +22,9 @@ export function Game(){
         const [category, setCategory] = useState("");
         const [totalScore, setTotalScore] = useState(0);
  
+        
+
+
         function handleNextQuestion() {
             setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
           }
@@ -31,7 +39,8 @@ export function Game(){
 
           function saveUserData(){
             addPlayer({name: user?.displayName? user?.displayName: "", games: [{category: category, difficulty: difficulty, score: score}] })
-            
+            const Info = {difficulty: difficulty, category: category, score:score}
+            props.GoToScoreCard(Info)
           }
 
         function updateScore() {
@@ -40,6 +49,8 @@ export function Game(){
         }
 
           console.log(user?.displayName)
+          
+
           
 
     return(
