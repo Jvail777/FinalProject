@@ -4,7 +4,7 @@ import { PlayerModel } from "../Models/PlayerModel";
 const baseUrl = "https://us-central1-finalproject-5656a.cloudfunctions.net/api"
 
 export function addPlayer(player:PlayerModel):Promise<PlayerModel>{
-    return axios.post<PlayerModel>(`${baseUrl}`, player).then(res => res.data);
+    return axios.post<PlayerModel>(`${baseUrl}/player`, player).then(res => res.data);
 }
 
 export function getLeaderboard(difficulty:string):Promise<PlayerModel[]>{
