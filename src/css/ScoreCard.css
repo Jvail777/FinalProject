@@ -8,3 +8,11 @@ text-align: center;
 max-width: 50%;
 max-height: 80vh;
 }
+
+.ScoreCard h5 {
+    margin-top: 20px;
+}
+
+.ScoreCard p {
+    font-style: italic;
+}
