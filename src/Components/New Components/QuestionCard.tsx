@@ -5,6 +5,7 @@ import "../../css/QuestionCard.css";
 import { useNavigate } from 'react-router-dom'
 import { ScoreCard } from "../ScoreCard";
 import { delay } from "q";
+import { isDisabled } from "@testing-library/user-event/dist/utils";
 
 interface IQuestionCardProps {
   questions: Question[];
@@ -17,7 +18,14 @@ export function QuestionCard(props: IQuestionCardProps) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [answer, setAnswer] = useState<string>("");
   const [progressBar, setProgressBar] = useState<number>(1);
-  
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [answerSelected, setAnswerSelected] = useState(false);
+  const [disabled, setDisabled] = useState(false);
+
+  function handleAnswerClick(answer:any){
+    setSelectedAnswer(answer);
+    setAnswerSelected(true);
+  }
 
   const navigate = useNavigate();
 
@@ -69,6 +77,7 @@ export function QuestionCard(props: IQuestionCardProps) {
               name="radio"
               value={firstAnswer.choice}
               onChange={(e) => setAnswer(e.target.value)}
+              onClick={() => handleAnswerClick(answer)}
               checked={answer === firstAnswer.choice}
             />
             {firstAnswer.choice}
@@ -79,6 +88,7 @@ export function QuestionCard(props: IQuestionCardProps) {
               name="radio"
               value={secondAnswer.choice}
               onChange={(e) => setAnswer(e.target.value)}
+              onClick={() => handleAnswerClick(answer)}
               checked={answer === secondAnswer.choice}
             />
             {secondAnswer.choice}
@@ -89,6 +99,7 @@ export function QuestionCard(props: IQuestionCardProps) {
               name="radio"
               value={thirdAnswer.choice}
               onChange={(e) => setAnswer(e.target.value)}
+              onClick={() => handleAnswerClick(answer)}
               checked={answer === thirdAnswer.choice}
             />
             {thirdAnswer.choice}
@@ -99,12 +110,12 @@ export function QuestionCard(props: IQuestionCardProps) {
               name="radio"
               value={fourthAnswer.choice}
               onChange={(e) => setAnswer(e.target.value)}
+              onClick={() => handleAnswerClick(answer)}
               checked={answer === fourthAnswer.choice}
             />
             {fourthAnswer.choice}
           </label>
-          <button onClick={onSubmitAnswer}>Submit Answer</button>
-   
+          <button disabled={!answerSelected} onClick= {onSubmitAnswer}>Submit Answer</button>
       </Card>
     </div>
   );
