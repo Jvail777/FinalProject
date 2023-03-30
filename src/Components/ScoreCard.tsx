@@ -11,14 +11,6 @@ interface IScoreCardProps {
 
 
 
-
-
-
-
-
-
-
-
 export function ScoreCard (props: IScoreCardProps) {
   return (
     <div className="ScoreCard">
