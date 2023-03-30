@@ -45,10 +45,10 @@ export function Game(props:IGameProps){
 
         function updateScore() {
             setScore(score +1)
-            console.log(score);
+            
         }
 
-          console.log(user?.displayName)
+          
           
 
           

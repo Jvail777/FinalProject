@@ -4,6 +4,7 @@ import { Card, CardTitle, Progress } from "reactstrap";
 import "../../css/QuestionCard.css";
 import { useNavigate } from 'react-router-dom'
 import { ScoreCard } from "../ScoreCard";
+import { delay } from "q";
 
 interface IQuestionCardProps {
   questions: Question[];
@@ -27,7 +28,7 @@ export function QuestionCard(props: IQuestionCardProps) {
 
   function onSubmitAnswer() {
     if(currentQuestionIndex === 9){
-      setProgressBar(progressBar + 1)
+      setProgressBar(progressBar + 1);
       checkAnswer();
       props.onGameEnd();
       navigate('/ScoreCard');
