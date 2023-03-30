@@ -30,10 +30,10 @@ export function SetupGame(props:ISetupGameProps) {
       <select className="dropdown-category" value={category} onChange={handleCategoryChange}>
         <option value="music">Music</option>
         <option value="history">History</option>
-        <option value="film and tv">Film and TV</option>
-        <option value="general knowledge">General Knowledge</option>
-        <option value="society and culture">Society and Culture</option>
-        <option value="sports and leisure">Sports and Leisure</option>
+        <option value="film_and_tv">Film and TV</option>
+        <option value="general_knowledge">General Knowledge</option>
+        <option value="society_and_culture">Society and Culture</option>
+        <option value="sport_and_leisure">Sports and Leisure</option>
       </select>
       <select className="dropdown-difficulty" value={difficulty} onChange={handleDifficultyChange}>
         <option value="easy">Easy</option>
