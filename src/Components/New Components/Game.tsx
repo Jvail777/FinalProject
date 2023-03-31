@@ -1,10 +1,11 @@
-import {  useContext, useState } from "react";
+import {  useContext, useEffect, useState } from "react";
 import { Question } from "../../Models/Question";
-import { addPlayer } from "../../Services/PlayerServices";
+import { addPlayer, getPlayerData, updatePlayer} from "../../Services/PlayerServices";
 import { SetupGame } from "./SetupGame";
 import { QuestionCard } from "./QuestionCard";
 import AuthContext from "../../context/AuthContext";
 import { ScoreCard } from "../ScoreCard";
+import { PlayerModel } from "../../Models/PlayerModel";
 
 
 interface IGameProps{
@@ -19,6 +20,7 @@ export function Game(props:IGameProps){
         const [difficulty, setDifficulty] = useState("");
         const [category, setCategory] = useState("");
         const [totalScore, setTotalScore] = useState(0);
+        const [playerData, setPlayerData] = useState<PlayerModel[]>([]);
  
         let score = 0;
 
@@ -36,26 +38,48 @@ export function Game(props:IGameProps){
 
 
           function saveUserData(){
-            addPlayer({id: user?.uid, name: user?.displayName? user?.displayName: "", games: [{category: category, difficulty: difficulty, score: score}] })
-            console.log(addPlayer({id: user?.uid, name: user?.displayName? user?.displayName: "", games: [{category: category, difficulty: difficulty, score: score}] }))
-            const Info = {difficulty: difficulty, category: category, score:score}
-            props.GoToScoreCard(Info)
+
+            if(user !== null){
+              let games = {category: category, difficulty: difficulty, score: score};
+              let player:PlayerModel = {googleId: user.uid, name: user.displayName ?? "default", games: [games]}
+           updatePlayer(player, games);
+            props.GoToScoreCard(games)
+            }
+            
+              
+            }
+            
+            // console.log(addPlayer({name: user?.displayName? user?.displayName: "", games: [{category: category, difficulty: difficulty, score: score}] }))
+            
+
+
+            function updateScore() {
+              score ++
+              
           }
 
-        function updateScore() {
-            score ++;
-        }
-
+          useEffect(() => {
+            async function fetchData(){
+              const data = await getPlayerData();
+              setPlayerData(data);
+            }
+            fetchData();
+          }, []);
           
-          
-
-          
-
-    return(
-        <div className="Game">
-            {user!== null && questions.length===0 &&<><SetupGame SetQuestions={setNewQuestions}/> </>}
-            {questions.length !== 0 && <><QuestionCard questions = {questions} updateScore={updateScore} onGameEnd={saveUserData}/></>}
             
-        </div>
-    )
-}
+            
+  
+            
+  
+      return(
+          <div className="Game">
+              {user!== null && questions.length===0 &&<><SetupGame SetQuestions={setNewQuestions}/> </>}
+              {questions.length !== 0 && <><QuestionCard questions = {questions} updateScore={updateScore} onGameEnd={saveUserData}/></>}
+              
+          </div>
+      )
+          }
+
+        
+
+      
