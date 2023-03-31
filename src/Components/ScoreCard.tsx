@@ -1,5 +1,5 @@
 import { Card, CardBody, CardTitle, Progress } from "reactstrap";
-import "../css/ScoreCard.css";
+// import "../css/ScoreCard.css";
 import { Question } from "../Models/Question";
 
 interface IScoreCardProps {
