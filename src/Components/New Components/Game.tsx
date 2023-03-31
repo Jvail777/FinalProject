@@ -36,8 +36,8 @@ export function Game(props:IGameProps){
 
 
           function saveUserData(){
-            addPlayer({name: user?.displayName? user?.displayName: "", games: [{category: category, difficulty: difficulty, score: score}] })
-            console.log(addPlayer({name: user?.displayName? user?.displayName: "", games: [{category: category, difficulty: difficulty, score: score}] }))
+            addPlayer({id: user?.uid, name: user?.displayName? user?.displayName: "", games: [{category: category, difficulty: difficulty, score: score}] })
+            console.log(addPlayer({id: user?.uid, name: user?.displayName? user?.displayName: "", games: [{category: category, difficulty: difficulty, score: score}] }))
             const Info = {difficulty: difficulty, category: category, score:score}
             props.GoToScoreCard(Info)
           }
