@@ -13,11 +13,9 @@ interface IGameProps{
 
 export function Game(props:IGameProps){
     
-        // const [name, setName] = useState('');
         const [questions, setQuestions] = useState<Question[]>([]);
         const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
         const { user } = useContext(AuthContext);
-        // const [score, setScore] = useState(0);
         const [difficulty, setDifficulty] = useState("");
         const [category, setCategory] = useState("");
         const [totalScore, setTotalScore] = useState(0);
@@ -38,8 +36,8 @@ export function Game(props:IGameProps){
 
 
           function saveUserData(){
-            addPlayer({name: user?.displayName? user?.displayName: "", games: [{category: category, difficulty: difficulty, score: score}] })
-            console.log(addPlayer({name: user?.displayName? user?.displayName: "", games: [{category: category, difficulty: difficulty, score: score}] }))
+            addPlayer({id: user?.uid, name: user?.displayName? user?.displayName: "", games: [{category: category, difficulty: difficulty, score: score}] })
+            console.log(addPlayer({id: user?.uid, name: user?.displayName? user?.displayName: "", games: [{category: category, difficulty: difficulty, score: score}] }))
             const Info = {difficulty: difficulty, category: category, score:score}
             props.GoToScoreCard(Info)
           }
