@@ -1,10 +1,11 @@
-import {  useContext, useEffect, useState } from "react";
+
+import {  useContext,  useState } from "react";
 import { Question } from "../../Models/Question";
-import { addPlayer, getPlayerData, updatePlayer} from "../../Services/PlayerServices";
+import {   updatePlayer} from "../../Services/PlayerServices";
 import { SetupGame } from "./SetupGame";
 import { QuestionCard } from "./QuestionCard";
 import AuthContext from "../../context/AuthContext";
-import { ScoreCard } from "../ScoreCard";
+
 import { PlayerModel } from "../../Models/PlayerModel";
 
 
@@ -15,19 +16,15 @@ interface IGameProps{
 export function Game(props:IGameProps){
     
         const [questions, setQuestions] = useState<Question[]>([]);
-        const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
+
         const { user } = useContext(AuthContext);
         const [difficulty, setDifficulty] = useState("");
         const [category, setCategory] = useState("");
-        const [totalScore, setTotalScore] = useState(0);
-        const [playerData, setPlayerData] = useState<PlayerModel[]>([]);
+        
  
         let score = 0;
 
 
-        function handleNextQuestion() {
-            setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
-          }
 
           function setNewQuestions(questions:Question[]){
             console.log(questions);
@@ -58,17 +55,9 @@ export function Game(props:IGameProps){
               
           }
 
-          useEffect(() => {
-            async function fetchData(){
-              const data = await getPlayerData();
-              setPlayerData(data);
-            }
-            fetchData();
-          }, []);
           
-            
-            
-  
+          
+        
             
   
       return(

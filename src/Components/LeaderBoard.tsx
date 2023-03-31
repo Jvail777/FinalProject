@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-// import "../css/LeaderBoard.css";
+
+import "../css/LeaderBoard.css";
 import { PlayerModel } from "../Models/PlayerModel";
 import { getPlayerData} from "../Services/PlayerServices";
 
@@ -32,7 +32,7 @@ export function Leaderboard() {
           {playerData.map((player) =>
             player.games &&
             player.games.map((game) => (
-              <tr key={`${player.id}-${game.category}`}>
+              <tr key={`${player.googleId}-${game.category}`}>
                 <td>{player.name}</td>
                 {/* <td>{game.category}</td>
                 <td>{game.difficulty}</td> */}

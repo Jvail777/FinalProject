@@ -3,9 +3,7 @@ import { Question } from "../../Models/Question";
 import { Card, CardTitle, Progress } from "reactstrap";
 // import "../../css/QuestionCard.css";
 import { useNavigate } from 'react-router-dom'
-import { ScoreCard } from "../ScoreCard";
-import { delay } from "q";
-import { isDisabled } from "@testing-library/user-event/dist/utils";
+
 
 interface IQuestionCardProps {
   questions: Question[];
@@ -14,17 +12,17 @@ interface IQuestionCardProps {
 }
 
 export function QuestionCard(props: IQuestionCardProps) {
-  const [questions, setQuestions] = useState<Question[]>([]);
+  
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [answer, setAnswer] = useState<string>("");
   const [progressBar, setProgressBar] = useState<number>(1);
-  const [selectedAnswer, setSelectedAnswer] = useState(null);
+
   const [answerSelected, setAnswerSelected] = useState(false);
 
   const navigate = useNavigate();
 
   function handleAnswerClick(answer: any) {
-    setSelectedAnswer(answer);
+
     setAnswerSelected(true);
   }
 

@@ -13,7 +13,7 @@ export function addPlayer(player:PlayerModel):Promise<PlayerModel>{
 //     .then(res => (res.data))
     
 
-}
+
 
 export async function getPlayerData(): Promise<PlayerModel[]> {
     const response = await axios.get<PlayerModel[]>(`${baseUrl}/player`);

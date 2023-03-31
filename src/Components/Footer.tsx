@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 
-import {Button, Modal, ModalBody, ModalHeader} from "reactstrap";
+import { Modal, ModalBody, ModalHeader} from "reactstrap";
 
 // import '../css/Footer.css'
 

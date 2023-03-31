@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import './App.css';
 // import './css/TriviaCard.css';
 // import './css/Header.css';
@@ -9,8 +9,7 @@ import {Leaderboard} from './Components/LeaderBoard';
 
 import { Footer } from "./Components/Footer";
 import { Game } from "./Components/New Components/Game";
-import { GetQuestions } from "./Services/QuestionServices";
-import { SetupGame } from "./Components/New Components/SetupGame";
+
 
 import AuthContextProvider from "./context/AuthContextProvider";
 

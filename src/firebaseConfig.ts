@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword } from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCp--BHiLUIBuUkU-s183cgIr9Un99FdCw",
-    authDomain: "fantasybuilder.firebaseapp.com",
-    projectId: "fantasybuilder",
-    storageBucket: "fantasybuilder.appspot.com",
-    messagingSenderId: "190607453230",
-    appId: "1:190607453230:web:eccc1a96977421dea843bf"
-  };
+  apiKey: "AIzaSyCoRGSKV5OStOWOjpur6zxtzX43jPJf-lo",
+  authDomain: "finalproject-5656a.firebaseapp.com",
+  projectId: "finalproject-5656a",
+  storageBucket: "finalproject-5656a.appspot.com",
+  messagingSenderId: "906517995228",
+  appId: "1:906517995228:web:3c924109ea1a2b14065e19"
+};
   
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);

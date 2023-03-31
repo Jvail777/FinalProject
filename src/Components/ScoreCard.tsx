@@ -1,6 +1,6 @@
-import { Card, CardBody, CardTitle, Progress } from "reactstrap";
+import { Card,  CardTitle,  } from "reactstrap";
 // import "../css/ScoreCard.css";
-import { Question } from "../Models/Question";
+
 
 interface IScoreCardProps {
   score?: number;
