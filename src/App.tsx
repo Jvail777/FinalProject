@@ -5,7 +5,7 @@ import './App.css';
 
 
 import { Header } from './Components/Header';
-import { LeaderBoard } from './Components/LeaderBoard';
+import {Leaderboard} from './Components/LeaderBoard';
 
 import { Footer } from "./Components/Footer";
 import { Game } from "./Components/New Components/Game";
@@ -44,7 +44,7 @@ let [gameInfo, setGameInfo] = useState<GameInfo>();
         <Header/>
         <Routes>
           <Route path="/" element={<Game GoToScoreCard={GoToScoreCard}/>}/>
-          <Route path="/LeaderBoard" element={<LeaderBoard />} />
+          <Route path="/LeaderBoard" element={<Leaderboard />} />
           <Route path='/ScoreCard' element={<ScoreCard  difficulty={gameInfo?.difficulty} category={gameInfo?.category} score={gameInfo?.score}/>} />
         </Routes>
         <Footer/>

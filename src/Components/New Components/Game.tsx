@@ -13,11 +13,9 @@ interface IGameProps{
 
 export function Game(props:IGameProps){
     
-        // const [name, setName] = useState('');
         const [questions, setQuestions] = useState<Question[]>([]);
         const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
         const { user } = useContext(AuthContext);
-        // const [score, setScore] = useState(0);
         const [difficulty, setDifficulty] = useState("");
         const [category, setCategory] = useState("");
         const [totalScore, setTotalScore] = useState(0);
