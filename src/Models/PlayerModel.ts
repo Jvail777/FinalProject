@@ -1,13 +1,8 @@
+import { Game } from "./Game";
 
 
 export interface PlayerModel {
-    id?: string,
+    googleId?: string,
     name: string,
-    games?: [
-        {
-            category: string,
-            difficulty: string,
-            score: number
-        }
-    ]
+    games?: Game[]
 }
