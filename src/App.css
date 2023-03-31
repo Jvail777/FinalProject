@@ -1,26 +1,42 @@
 @media screen and (max-width: 480px){
 
-.Game {
+/* .Game {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} */
 
 
 .Footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
-.QuestionCard-Card card {
+
+.QuestionCard-Container {
+    margin: auto;
+    padding: 0;
+    width: 100vh;
+    height: 50vh;
+}
+
+.QuestionCard-Container h2 {
+    font-size: 15px;
+}
+.QuestionCard-Card.card {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: auto;
+    height: 40vh;
 }
 
 .Header {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding-left: 15px;
@@ -34,6 +50,25 @@
 
 .Header p  {
     visibility:hidden;
+}
+
+.CardTitle.card-title {
+    font-size: 12px;
+}
+
+.QuestionCard-Card.card label {
+    font-size: 12px;
+}
+
+.LB-Header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.LB-Buttons {
+    flex-direction: column;
 }
 
 }

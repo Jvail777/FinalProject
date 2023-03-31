@@ -49,6 +49,7 @@ export function QuestionCard(props: IQuestionCardProps) {
       console.log("out of questions");
     }
     setAnswer("");
+    setAnswerSelected(false);
   }
 
   function checkAnswer() {
