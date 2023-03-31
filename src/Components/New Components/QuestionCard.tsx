@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Question } from "../../Models/Question";
 import { Card, CardTitle, Progress } from "reactstrap";
-import "../../css/QuestionCard.css";
+// import "../../css/QuestionCard.css";
 import { useNavigate } from 'react-router-dom'
 import { ScoreCard } from "../ScoreCard";
 import { delay } from "q";
@@ -20,28 +20,25 @@ export function QuestionCard(props: IQuestionCardProps) {
   const [progressBar, setProgressBar] = useState<number>(1);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [answerSelected, setAnswerSelected] = useState(false);
-  const [disabled, setDisabled] = useState(false);
 
-  function handleAnswerClick(answer:any){
+  const navigate = useNavigate();
+
+  function handleAnswerClick(answer: any) {
     setSelectedAnswer(answer);
     setAnswerSelected(true);
   }
-
-  const navigate = useNavigate();
 
   function handleNextQuestion() {
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
   }
 
-
   function onSubmitAnswer() {
-    if(currentQuestionIndex === 9){
+    if (currentQuestionIndex === 9) {
       setProgressBar(progressBar + 1);
       checkAnswer();
       props.onGameEnd();
       navigate('/ScoreCard');
-    }
-    else if (currentQuestionIndex !== 9) {
+    } else if (currentQuestionIndex !== 9) {
       checkAnswer();
       handleNextQuestion();
       setProgressBar(progressBar + 1)
@@ -49,12 +46,12 @@ export function QuestionCard(props: IQuestionCardProps) {
       console.log("out of questions");
     }
     setAnswer("");
+    setAnswerSelected(false);
   }
 
   function checkAnswer() {
     if (answer === props.questions[currentQuestionIndex].correctAnswer) {
       props.updateScore();
-    } else {
     }
   }
 
@@ -68,33 +65,33 @@ export function QuestionCard(props: IQuestionCardProps) {
       <h2>Trivia Question:</h2>
       <Card className="QuestionCard-Card">
         <CardTitle className="CardTitle">
-        <Progress animated striped color="warning" max = {10} value= {progressBar} ></Progress>
+          <Progress animated striped color="warning" max={10} value={progressBar}></Progress>
           {props.questions[currentQuestionIndex].question}
         </CardTitle>
-          <label>
-            <input
-              type="radio"
-              name="radio"
-              value={firstAnswer.choice}
-              onChange={(e) => setAnswer(e.target.value)}
-              onClick={() => handleAnswerClick(answer)}
-              checked={answer === firstAnswer.choice}
-            />
-            {firstAnswer.choice}
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="radio"
-              value={secondAnswer.choice}
-              onChange={(e) => setAnswer(e.target.value)}
-              onClick={() => handleAnswerClick(answer)}
-              checked={answer === secondAnswer.choice}
-            />
-            {secondAnswer.choice}
-          </label>
-          <label>
-            <input
+        <label>
+          <input
+            type="radio"
+            name="radio"
+            value={firstAnswer.choice}
+            onChange={(e) => setAnswer(e.target.value)}
+            onClick={() => handleAnswerClick(firstAnswer)}
+            checked={answer === firstAnswer.choice}
+          />
+          {firstAnswer.choice}
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="radio"
+            value={secondAnswer.choice}
+            onChange={(e) => setAnswer(e.target.value)}
+            onClick={() => handleAnswerClick(secondAnswer)}
+            checked={answer === secondAnswer.choice}
+          />
+          {secondAnswer.choice}
+        </label>
+        <label>
+             <input
               type="radio"
               name="radio"
               value={thirdAnswer.choice}

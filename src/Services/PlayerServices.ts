@@ -8,10 +8,11 @@ export function addPlayer(player:PlayerModel):Promise<PlayerModel>{
     return axios.post<PlayerModel>(`${baseUrl}/player`, player).then(res => res.data);
 }
 
-export function getLeaderboard(difficulty:string):Promise<PlayerModel[]>{
-    return axios.get<PlayerModel[]>(`${baseUrl}/leaderboard`, {params: {difficulty}})
-    .then(res => (res.data))
+// export function getLeaderboard(difficulty:string):Promise<PlayerModel[]>{
+//     return axios.get<PlayerModel[]>(`${baseUrl}/leaderboard`, {params: {difficulty}})
+//     .then(res => (res.data))
     
+
 }
 
 export async function getPlayerData(): Promise<PlayerModel[]> {
@@ -22,3 +23,4 @@ export async function getPlayerData(): Promise<PlayerModel[]> {
   export function updatePlayer(player:PlayerModel, game:Game):Promise<PlayerModel>{
     return axios.put<PlayerModel>(`${baseUrl}/player/${player.googleId}/${player.name}`, game).then(res => res.data)
   }
+

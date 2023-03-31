@@ -1,30 +1,49 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "../css/LeaderBoard.css";
-import { getLeaderboard } from "../Services/PlayerServices";
+// import "../css/LeaderBoard.css";
+import { PlayerModel } from "../Models/PlayerModel";
+import { getPlayerData} from "../Services/PlayerServices";
 
-export function LeaderBoard() {
+export function Leaderboard() {
+  const [playerData, setPlayerData] = useState<PlayerModel[]>([]);
 
-  // const [isSelected, setIsSelected] = useState(false);
-  const [leaderboard, setLeaderboard] = useState();
+  useEffect(() => {
+    async function fetchData() {
+      const data = await getPlayerData();
+      setPlayerData(data);
+    }
 
-  let leaderboardHard = getLeaderboard("hard");
-  console.log(leaderboardHard);
-  // leaderboardHard.then(res => res.map((x) => x.name = "Melissa"))
-  console.log(leaderboardHard);
+    fetchData();
+  }, []);
 
   return (
-    <div className="LB-Header">
-      <h1>LeaderBoard Coming Soon!</h1>
+    <div className="leaderboard-container">
+      <h1>LeaderBoard</h1>
+      <table className="leaderboard-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            {/* <th>Category</th>
+            <th>Difficulty</th> */}
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          {playerData.map((player) =>
+            player.games &&
+            player.games.map((game) => (
+              <tr key={`${player.id}-${game.category}`}>
+                <td>{player.name}</td>
+                {/* <td>{game.category}</td>
+                <td>{game.difficulty}</td> */}
+                <td>{game.score}</td>
+              </tr>
+            ))
+          )}
+        </tbody>
+      </table>
       
-      <div className="LB-Buttons">
-        <button>Easy</button>
-        <button>Medium</button>
-        <Link to="/leaderboard?difficulty=hard">
-        <button>Hard</button></Link>
-        <div>{leaderboard}</div>
-      </div>
-  
     </div>
   );
 }
+

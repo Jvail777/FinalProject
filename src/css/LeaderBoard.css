@@ -1,8 +1,4 @@
-body {
-    /* background-image: url(../images/final.jpg);
-    background-size: cover;
-    background-position: center; */
-}
+
 
 .LB-Header h1 {
     text-align: center;
@@ -15,15 +11,52 @@ body {
     justify-content: center;
 }
 
-.LB-Header button {
-    color: black;
-    background-color: orange;
-    margin: 20px;
-}
 
-.LB-Footer {
-    display: flex;
-    justify-content: space-between;
-    margin-left: 70px;
-    margin-right: 70px;
-}
+  .leaderboard-container {
+    margin: 0 auto;
+    margin-top: 70px;
+    color: #F89C13;
+    height: 550px;
+    overflow-y: scroll;
+    width: 30%;
+  }
+  
+  .leaderboard-container h1 {
+    text-align: center;
+    
+    width: 100%;
+    
+    background-color: rgb(107, 6, 99);
+    padding: 10px;
+   
+  }
+  
+  .leaderboard-table {
+    border-collapse: collapse;
+    width: 100%;
+    
+  }
+  
+  .leaderboard-table th,
+  .leaderboard-table td {
+    text-align: center;
+    padding: 8px;
+    border-bottom: 1px solid #000000;
+  }
+  
+  .leaderboard-table th {
+    background-color: #F89C13;
+    color: white;
+    
+  }
+  
+  .leaderboard-table tr {
+    background-color: #f2f2f2;
+  }
+  
+  .leaderboard-table tr:hover {
+    background-color: #ddd;
+  }
+  
+ 
+  

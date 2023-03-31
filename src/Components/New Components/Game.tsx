@@ -14,7 +14,6 @@ interface IGameProps{
 
 export function Game(props:IGameProps){
     
-        // const [name, setName] = useState('');
         const [questions, setQuestions] = useState<Question[]>([]);
         const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
         const { user } = useContext(AuthContext);
@@ -39,6 +38,7 @@ export function Game(props:IGameProps){
 
 
           function saveUserData(){
+
             if(user !== null){
               let games = {category: category, difficulty: difficulty, score: score};
               let player:PlayerModel = {googleId: user.uid, name: user.displayName ?? "default", games: [games]}
@@ -51,6 +51,7 @@ export function Game(props:IGameProps){
             
             // console.log(addPlayer({name: user?.displayName? user?.displayName: "", games: [{category: category, difficulty: difficulty, score: score}] }))
             
+
 
             function updateScore() {
               score ++
