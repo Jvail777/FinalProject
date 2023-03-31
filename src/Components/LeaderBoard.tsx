@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "../css/LeaderBoard.css";
+// import "../css/LeaderBoard.css";
 import { PlayerModel } from "../Models/PlayerModel";
 import { getPlayerData} from "../Services/PlayerServices";
 
