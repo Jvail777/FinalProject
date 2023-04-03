@@ -8,7 +8,7 @@
         padding: 20px;
         box-sizing: border-box;
       }
-      
+
       .footer-button {
         background-color: orange;
         color: rgb(0, 0, 0);
@@ -18,13 +18,13 @@
         border: none;
         border-radius: 9px;
       }
-      
+
       .Modal {
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-      
+
         background-color: white;
         border-radius: 10px;
         text-align: center;
@@ -33,7 +33,7 @@
         max-width: 400px;
         font-size: 24px;
       }
-      
+
       .close {
         margin: 0;
         position: absolute;
@@ -43,9 +43,9 @@
         top: 10px; 
         right: 15px; 
       }
-      
-      
-      
+
+
+
     }
 
     @media only screen and (min-width: 1000px){
@@ -57,7 +57,7 @@
             bottom: 0;
             width: 100%;
         }   
-        
+
         .footer-button {
             background-color: orange;
             color: rgb(0, 0, 0);
@@ -67,19 +67,19 @@
             border: none;
             border-radius: 9px;
         }
-        
+
         .Modal {
             position: fixed;
             top: 50%;
             left: 50%;
-        
+
             background-color: white;
             border-radius: 10px;
             text-align: center;
             height: 50vh;
             font-size: 30px;
           }
-        
+
           .close {
             margin: 0;
             position: absolute;
@@ -89,8 +89,8 @@
             top: 10px; 
             right: 15px; 
             }
-        
-        
+
+
     }
     
    
