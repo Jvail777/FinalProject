@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+
+import "../css/LeaderBoard.css";
 import { PlayerModel } from "../Models/PlayerModel";
 import { getPlayerData} from "../Services/PlayerServices";
 
