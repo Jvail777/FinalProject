@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Question } from "../../Models/Question";
 import { Card, CardTitle, Progress } from "reactstrap";
-// import "../../css/QuestionCard.css";
+import "../../css/QuestionCard.css";
 import { useNavigate } from 'react-router-dom'
 
 

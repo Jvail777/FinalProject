@@ -1,66 +1,124 @@
-.QuestionCard-Card {
-  font-size: .75em;
-  display: flex;
+@media only screen and (max-width: 999px) {
+  .QuestionCard-Card {
+    font-size: 0.75em;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .QuestionCard-Container {
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .CardTitle {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+  
+  label {
+    cursor: pointer;
+    display: block;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.2em;
+    padding: 8px;
+    position: relative;
+    transition: background-color 0.2s ease;
+    margin-bottom: 0.5em;
+    text-align: start;
+  }
+  
+  input[type="radio"] {
+    margin: 10px;
+    width: auto;
+  }
+  
+  input[type="radio"]:checked + span {
+    background-color: #7FC6A4;
+    color: #fff;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0.25em;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    width: 150px;
+    font-size: 0.8em;
+    text-align: center;
+    margin: 10px auto;
+  }
+
 }
 
-.QuestionCard-Container {
-  background-color: white;
-  border-radius: 10px;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
-  margin: 20px auto;
-  padding: 40px;
-  text-align: center;
-  max-width: 50%;
-  max-height: 80vh;
+@media only screen and (min-width: 1000px){
+  .QuestionCard-Card {
+    font-size: .75em;
+    display: flex;
+  }
+  
+  .QuestionCard-Container {
+    background-color: white;
+    border-radius: 10px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+    margin: 20px auto;
+    padding: 40px;
+    text-align: center;
+    max-width: 50%;
+    max-height: 80vh;
+  }
+  
+  
+  label {
+    cursor: pointer;
+    display: block;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.5em;
+    padding: 8px;
+    position: relative;
+    transition: background-color 0.2s ease;
+    margin-bottom: 0.5em;
+    text-align: start;
+  }
+  
+  input[type="radio"] {
+    margin: 10px;
+    width: auto;
+  }
+  
+  input[type="radio"]:checked+span {
+    background-color: #7FC6A4;
+    color: #fff;
+  }
+  
+  .CardTitle {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+  
+  
+  /* input[type="radio"] {
+    margin-right: 0.5em;
+  } */
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0.25em;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    width: 150px;
+    font-size: .75em;
+    text-align: center;
+  }
+
+
 }
-
-
-label {
-  cursor: pointer;
-  display: block;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.5em;
-  padding: 8px;
-  position: relative;
-  transition: background-color 0.2s ease;
-  margin-bottom: 0.5em;
-  text-align: start;
-}
-
-input[type="radio"] {
-  margin: 10px;
-  width: auto;
-}
-
-input[type="radio"]:checked+span {
-  background-color: #7FC6A4;
-  color: #fff;
-}
-
-.CardTitle {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-bottom: 1em;
-}
-
-
-/* input[type="radio"] {
-  margin-right: 0.5em;
-} */
-
-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 0.25em;
-  padding: 0.5em 1em;
-  cursor: pointer;
-  width: 150px;
-  font-size: .75em;
-  text-align: center;
-}
-
-/* button:hover {
-  background-color: #0069d9;
-} */
 
