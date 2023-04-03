@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { Modal, ModalBody, ModalHeader} from "reactstrap";
 
-import '../css/Footer.css'
+// import '../css/Footer.css'
 
 
 export function Footer () {
