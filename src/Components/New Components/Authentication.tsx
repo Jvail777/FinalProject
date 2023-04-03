@@ -3,7 +3,6 @@ import { useContext } from 'react';
 import AuthContext from '../../context/AuthContext';
 
 
-
 export function Authentication(){
     const { user } = useContext(AuthContext);
 
