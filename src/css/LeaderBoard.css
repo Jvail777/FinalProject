@@ -1,71 +1,6 @@
 
 
-@media only screen and (max-width: 999px) {
-  .Title {
-    font-family: Bungee Shade;
-    font-size: 2.5rem;
-  }
-
-  .LB-Header h1 {
-    text-align: center;
-    margin-top: 20px;
-    color:#F89C13;
-    font-size: 2rem;
-}
-
-.LB-Buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.leaderboard-container {
-    margin: 0 auto;
-    margin-top: 20px;
-    color: #F89C13;
-    height: 350px;
-    overflow-y: scroll;
-    width: 90%;
-  }
-  
-.leaderboard-container h1 {
-    text-align: center;
-    font-size: 1.5rem;
-    width: 100%;
-    background-color: rgb(107, 6, 99);
-    padding: 10px;
-  }
-  
-.leaderboard-table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-.leaderboard-table th,
-.leaderboard-table td {
-    text-align: center;
-    padding: 8px;
-    border-bottom: 1px solid #000000;
-  }
-  
-.leaderboard-table th {
-    background-color: #F89C13;
-    color: white;
-    font-size: 1.2rem;
-  }
-  
-.leaderboard-table tr {
-    background-color: #f2f2f2;
-  }
-  
-.leaderboard-table tr:hover {
-    background-color: #ddd;
-  }
-
-}
-
-@media only screen and (min-width: 1000px){
-  .LB-Header h1 {
+.LB-Header h1 {
     text-align: center;
     margin-top: 70px;
     color:#F89C13;
@@ -122,6 +57,6 @@
   .leaderboard-table tr:hover {
     background-color: #ddd;
   }
-
-
-}
+  
+ 
+  
