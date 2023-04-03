@@ -1,5 +1,5 @@
 import { Card,  CardTitle,  } from "reactstrap";
-// import "../css/ScoreCard.css";
+
 
 
 interface IScoreCardProps {
