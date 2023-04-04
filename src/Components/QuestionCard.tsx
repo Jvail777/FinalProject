@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Question } from "../../Models/Question";
+import { Question } from "../Models/Question";
 import { Card, CardTitle, Progress } from "reactstrap";
 import { useNavigate } from 'react-router-dom'
 import {FcCancel, FcOk} from "react-icons/fc"
+import "../css/QuestionCard.css"
 
 
 interface IQuestionCardProps {
@@ -80,13 +81,13 @@ export function QuestionCard(props: IQuestionCardProps) {
         {isCorrect ? 
         (<><h3>Correct! <FcOk/></h3>
           
-        <button onClick= {handleNextQuestion}>Next Question</button></>) 
+        <button className = "QuestionCardBtn" onClick= {handleNextQuestion}>Next Question</button></>) 
         
         : 
         (<><h3>Incorrect <FcCancel /></h3>
           <h4>Your Answer: {answer}</h4>
           <h4>Correct Answer: {props.questions[currentQuestionIndex].correctAnswer}</h4>
-          <button onClick= {handleNextQuestion}>Next Question</button></>)
+          <button className = "QuestionCardBtn" onClick= {handleNextQuestion}>Next Question</button></>)
           }
       </Card>
       </>) 
@@ -142,7 +143,7 @@ export function QuestionCard(props: IQuestionCardProps) {
           />
           {fourthAnswer.choice}
         </label>
-        <button disabled={!answerSelected} onClick= {onSubmitAnswer}>Submit Answer</button>
+        <button className = "QuestionCardBtn" disabled={!answerSelected} onClick= {onSubmitAnswer}>Submit Answer</button>
     </Card>
     </>)}
       

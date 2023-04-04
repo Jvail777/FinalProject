@@ -1,12 +1,12 @@
 
 import {  useContext,  useState } from "react";
-import { Question } from "../../Models/Question";
-import {   updatePlayer} from "../../Services/PlayerServices";
+import { Question } from "../Models/Question";
+import {   updatePlayer} from "../Services/PlayerServices";
 import { SetupGame } from "./SetupGame";
 import { QuestionCard } from "./QuestionCard";
-import AuthContext from "../../context/AuthContext";
+import AuthContext from "../context/AuthContext";
 
-import { PlayerModel } from "../../Models/PlayerModel";
+import { PlayerModel } from "../Models/PlayerModel";
 
 
 interface IGameProps{
