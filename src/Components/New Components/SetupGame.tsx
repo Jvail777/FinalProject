@@ -29,6 +29,10 @@ export function SetupGame(props:ISetupGameProps) {
         <form onSubmit={handleOnSubmit}>
       <select className="dropdown-category" value={category} onChange={handleCategoryChange}>
         <option value="music">Music</option>
+        <option value="arts_and_literature">Arts and Literature</option>
+        <option value="history">History</option>
+        <option value="science">Science</option>
+        <option value="geography">Geography</option>
         <option value="history">History</option>
         <option value="film_and_tv">Film and TV</option>
         <option value="general_knowledge">General Knowledge</option>
