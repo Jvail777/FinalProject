@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Question } from "../../Models/Question";
 import { Card, CardTitle, Progress } from "reactstrap";
 import { useNavigate } from 'react-router-dom'
+import {FcCancel, FcOk} from "react-icons/fc"
 
 
 interface IQuestionCardProps {
@@ -17,6 +18,8 @@ export function QuestionCard(props: IQuestionCardProps) {
   const [progressBar, setProgressBar] = useState<number>(1);
 
   const [answerSelected, setAnswerSelected] = useState(false);
+  const [showAnswer, setShowAnswer] = useState(false);
+  const [isCorrect, setIsCorrect] = useState(false);
 
   const navigate = useNavigate();
 
@@ -27,6 +30,10 @@ export function QuestionCard(props: IQuestionCardProps) {
 
   function handleNextQuestion() {
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+    setAnswer("");
+    setAnswerSelected(false);
+    setShowAnswer(false);
+    setIsCorrect(false);
   }
 
   function onSubmitAnswer() {
@@ -37,20 +44,23 @@ export function QuestionCard(props: IQuestionCardProps) {
       navigate('/ScoreCard');
     } else if (currentQuestionIndex !== 9) {
       checkAnswer();
-      handleNextQuestion();
+      setShowAnswer(true);
       setProgressBar(progressBar + 1)
     } else {
       console.log("out of questions");
     }
-    setAnswer("");
-    setAnswerSelected(false);
   }
 
   function checkAnswer() {
     if (answer === props.questions[currentQuestionIndex].correctAnswer) {
+      setIsCorrect(true);
       props.updateScore();
+      
     }
   }
+
+  
+  
 
   let firstAnswer = props.questions[currentQuestionIndex].questionChoices[0];
   let secondAnswer = props.questions[currentQuestionIndex].questionChoices[1];
@@ -59,58 +69,87 @@ export function QuestionCard(props: IQuestionCardProps) {
 
   return (
     <div className="QuestionCard-Container">
-      <h2>Trivia Question:</h2>
+      {showAnswer ? 
+      (<>
+      <h2>{props.questions[currentQuestionIndex].question}</h2>
       <Card className="QuestionCard-Card">
         <CardTitle className="CardTitle">
           <Progress animated striped color="warning" max={10} value={progressBar}></Progress>
-          {props.questions[currentQuestionIndex].question}
         </CardTitle>
-        <label>
-          <input
-            type="radio"
-            name="radio"
-            value={firstAnswer.choice}
-            onChange={(e) => setAnswer(e.target.value)}
-            onClick={() => handleAnswerClick(firstAnswer)}
-            checked={answer === firstAnswer.choice}
-          />
-          {firstAnswer.choice}
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="radio"
-            value={secondAnswer.choice}
-            onChange={(e) => setAnswer(e.target.value)}
-            onClick={() => handleAnswerClick(secondAnswer)}
-            checked={answer === secondAnswer.choice}
-          />
-          {secondAnswer.choice}
-        </label>
-        <label>
-             <input
-              type="radio"
-              name="radio"
-              value={thirdAnswer.choice}
-              onChange={(e) => setAnswer(e.target.value)}
-              onClick={() => handleAnswerClick(answer)}
-              checked={answer === thirdAnswer.choice}
-            />
-            {thirdAnswer.choice}
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="radio"
-              value={fourthAnswer.choice}
-              onChange={(e) => setAnswer(e.target.value)}
-              onClick={() => handleAnswerClick(answer)}
-              checked={answer === fourthAnswer.choice}
-            />
-            {fourthAnswer.choice}
-          </label>
-          <button disabled={!answerSelected} onClick= {onSubmitAnswer}>Submit Answer</button>
+        
+        {isCorrect ? 
+        (<><h3>Correct! <FcOk/></h3>
+          
+        <button onClick= {handleNextQuestion}>Next Question</button></>) 
+        
+        : 
+        (<><h3>Incorrect <FcCancel /></h3>
+          <h4>Your Answer: {answer}</h4>
+          <h4>Correct Answer: {props.questions[currentQuestionIndex].correctAnswer}</h4>
+          <button onClick= {handleNextQuestion}>Next Question</button></>)
+          }
       </Card>
-    </div>
+      </>) 
+      : 
+    (<>
+    <h2>{props.questions[currentQuestionIndex].question}</h2>
+    <Card className="QuestionCard-Card">
+      <CardTitle className="CardTitle">
+        <Progress animated striped color="warning" max={10} value={progressBar}></Progress>
+      </CardTitle>
+      <label>
+        <input
+          type="radio"
+          name="radio"
+          value={firstAnswer.choice}
+          onChange={(e) => setAnswer(e.target.value)}
+          onClick={() => handleAnswerClick(firstAnswer)}
+          checked={answer === firstAnswer.choice}
+        />
+        {firstAnswer.choice}
+        
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="radio"
+          value={secondAnswer.choice}
+          onChange={(e) => setAnswer(e.target.value)}
+          onClick={() => handleAnswerClick(secondAnswer)}
+          checked={answer === secondAnswer.choice}
+        />
+        {secondAnswer.choice}
+      </label>
+      <label>
+           <input
+            type="radio"
+            name="radio"
+            value={thirdAnswer.choice}
+            onChange={(e) => setAnswer(e.target.value)}
+            onClick={() => handleAnswerClick(answer)}
+            checked={answer === thirdAnswer.choice}
+          />
+          {thirdAnswer.choice}
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="radio"
+            value={fourthAnswer.choice}
+            onChange={(e) => setAnswer(e.target.value)}
+            onClick={() => handleAnswerClick(answer)}
+            checked={answer === fourthAnswer.choice}
+          />
+          {fourthAnswer.choice}
+        </label>
+        <button disabled={!answerSelected} onClick= {onSubmitAnswer}>Submit Answer</button>
+    </Card>
+    </>)}
+      
+
+      </div>
+
+
+    
   );
 }
