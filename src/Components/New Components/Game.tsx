@@ -62,6 +62,7 @@ export function Game(props:IGameProps){
   
       return(
           <div className="Game">
+              {user=== null && <h1 style={{textAlign: 'center', color: 'orange', fontSize: 60, paddingTop:150}}>Sign in to begin playing!</h1>}
               {user!== null && questions.length===0 &&<><SetupGame SetQuestions={setNewQuestions}/> </>}
               {questions.length !== 0 && <><QuestionCard questions = {questions} updateScore={updateScore} onGameEnd={saveUserData}/></>}
               

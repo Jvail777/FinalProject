@@ -75,6 +75,10 @@
     flex-direction: column;
     align-items: center;
   }
+
+  #Intro {
+    color: #F89C13;
+  }
   
   .Header section {
     display: flex;
