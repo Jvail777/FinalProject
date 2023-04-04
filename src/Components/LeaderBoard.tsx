@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
-
-import "../css/LeaderBoard.css";
 import { PlayerModel } from "../Models/PlayerModel";
-import { getPlayerData} from "../Services/PlayerServices";
+import { getPlayerData } from "../Services/PlayerServices";
 
 export function Leaderboard() {
   const [playerData, setPlayerData] = useState<PlayerModel[]>([]);
@@ -16,6 +14,14 @@ export function Leaderboard() {
     fetchData();
   }, []);
 
+  
+  const allGameScores = playerData.flatMap(
+    (player) => player.games?.map((game) => game.score) ?? []
+  );
+
+  
+  allGameScores.sort((a: number, b: number) => b - a);
+
   return (
     <div className="leaderboard-container">
       <h1>LeaderBoard</h1>
@@ -23,27 +29,25 @@ export function Leaderboard() {
         <thead>
           <tr>
             <th>Name</th>
-            {/* <th>Category</th>
-            <th>Difficulty</th> */}
+            
             <th>Score</th>
           </tr>
         </thead>
         <tbody>
-          {playerData.map((player) =>
-            player.games &&
-            player.games.map((game) => (
+          {playerData
+            .filter((player) => player.games)
+            .flatMap((player) =>
+              (player.games ?? []).map((game) => ({ player, game }))
+            )
+            .sort((a, b) => b.game.score - a.game.score)
+            .map(({ player, game }) => (
               <tr key={`${player.googleId}-${game.category}`}>
                 <td>{player.name}</td>
-                {/* <td>{game.category}</td>
-                <td>{game.difficulty}</td> */}
                 <td>{game.score}</td>
               </tr>
-            ))
-          )}
+            ))}
         </tbody>
       </table>
-      
     </div>
   );
 }
-
