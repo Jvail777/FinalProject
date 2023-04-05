@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import "../css/Footer.css"
 
 import { Modal, ModalBody, ModalHeader} from "reactstrap";
 
@@ -22,7 +22,7 @@ export function Footer () {
     return (
         <div className="Footer">
             <Link to="/LeaderBoard">
-        <button className='footer-button'>LeaderBoards</button>
+        <button className='footer-button'>Leaderboard</button>
         </Link>
         <Link to="/">
         <button className='footer-button'>New Game</button>

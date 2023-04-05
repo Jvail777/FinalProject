@@ -8,7 +8,7 @@ import { Header } from './Components/Header';
 import {Leaderboard} from './Components/LeaderBoard';
 
 import { Footer } from "./Components/Footer";
-import { Game } from "./Components/New Components/Game";
+import { Game } from "./Components/Game";
 
 
 import AuthContextProvider from "./context/AuthContextProvider";

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { GetQuestions } from "../../Services/QuestionServices";
-
+import { GetQuestions } from "../Services/QuestionServices";
+import "../css/SetUpGame.css"
 
 interface ISetupGameProps{
     SetQuestions: Function;
