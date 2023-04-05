@@ -1,5 +1,5 @@
-// import '../css/Header.css';
-import { Authentication } from './New Components/Authentication';
+import '../css/Header.css';
+import { Authentication } from './Authentication';
 
 export function Header () {
   return (

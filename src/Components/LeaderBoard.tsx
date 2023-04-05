@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { PlayerModel } from "../Models/PlayerModel";
 import { getPlayerData } from "../Services/PlayerServices";
+import "../css/Leaderboard.css";
 
 export function Leaderboard() {
   const [playerData, setPlayerData] = useState<PlayerModel[]>([]);
@@ -14,22 +15,20 @@ export function Leaderboard() {
     fetchData();
   }, []);
 
-  
   const allGameScores = playerData.flatMap(
     (player) => player.games?.map((game) => game.score) ?? []
   );
 
-  
   allGameScores.sort((a: number, b: number) => b - a);
 
   return (
     <div className="leaderboard-container">
-      <h1>LeaderBoard</h1>
+      <h1>Leaderboard</h1>
       <table className="leaderboard-table">
         <thead>
           <tr>
             <th>Name</th>
-            
+
             <th>Score</th>
           </tr>
         </thead>

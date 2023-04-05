@@ -1,4 +1,4 @@
-export interface QuestionChoice{
-    choice: string,
-    isCorrect: boolean
+export interface QuestionChoice {
+  choice: string;
+  isCorrect: boolean;
 }
