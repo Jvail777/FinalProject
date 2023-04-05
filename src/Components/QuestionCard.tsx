@@ -42,7 +42,9 @@ export function QuestionCard(props: IQuestionCardProps) {
       setProgressBar(progressBar + 1);
       checkAnswer();
       props.onGameEnd();
-      navigate('/ScoreCard');
+      setShowAnswer(true);
+      setTimeout(()=>{navigate('/ScoreCard')},2000);
+      
     } else if (currentQuestionIndex !== 9) {
       checkAnswer();
       setShowAnswer(true);
