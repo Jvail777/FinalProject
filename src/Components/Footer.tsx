@@ -37,7 +37,15 @@ export function Footer() {
         <ModalBody contentClassName="modalBody">
           Select the category you would like to play. Select a difficulty.
           Complete all 10 questions to see how many you can get right! Play
-          again to beat your score and move up on the leaderboard!{" "}
+          again to beat your score and move up on the leaderboard!
+          <br></br>
+          Easy Questions = 1 point
+          <br></br>
+          Medium Questions = 2 points
+          <br></br>
+          Hard Questions = 3 points
+          {" "}
+        
         </ModalBody>
       </Modal>
     </div>
