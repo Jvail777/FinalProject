@@ -18,7 +18,6 @@ export function Game(props: IGameProps) {
   let score = 0;
 
   function setNewQuestions(questions: Question[]) {
-    console.log(questions);
     setQuestions([...questions]);
     setDifficulty(questions[0].difficulty);
     setCategory(questions[0].category);
