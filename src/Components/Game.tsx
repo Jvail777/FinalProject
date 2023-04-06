@@ -38,7 +38,11 @@ export function Game(props: IGameProps) {
   }
   
   function updateScore() {
-    score++;
+    if(difficulty === "easy"){score++}
+    else if (difficulty === "medium"){
+      score +=2
+    }
+    else {score +=3}
   }
 
   return (
