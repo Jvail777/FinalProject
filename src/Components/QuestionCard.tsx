@@ -64,7 +64,7 @@ export function QuestionCard(props: IQuestionCardProps) {
     <div className="QuestionCard-Container">
       {showAnswer ? (
         <>
-          <h2>{props.questions[currentQuestionIndex].question}</h2>
+          <h4>{props.questions[currentQuestionIndex].question}</h4>
           <Card className="QuestionCard-Card">
             <CardTitle className="CardTitle">
               <Progress
@@ -111,7 +111,7 @@ export function QuestionCard(props: IQuestionCardProps) {
         </>
       ) : (
         <>
-          <h2>{props.questions[currentQuestionIndex].question}</h2>
+          <h4>{props.questions[currentQuestionIndex].question}</h4>
           <Card className="QuestionCard-Card">
             <CardTitle className="CardTitle">
               <Progress
