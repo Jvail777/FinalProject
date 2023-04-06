@@ -19,7 +19,13 @@
     }
 
     button {
+        
         background-color: orange;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
     }
 
     .dropdown-category {
@@ -35,6 +41,7 @@
 
     .dropdown-difficulty {
         margin-right: 10px;
+        margin-top: 10px;
         padding: 8px;
         border: 1px solid #ccc;
         border-radius: 5px;
