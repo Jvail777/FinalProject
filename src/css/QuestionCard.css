@@ -42,6 +42,7 @@
   }
 
   .QuestionCardBtn {
+    display: flex;
     background-color: orange;
     color: rgb(0, 0, 0);
     font-size: 16px;
@@ -49,7 +50,7 @@
     margin-left: 39%;
     border: none;
     border-radius: 9px;
-    width: 25%;
+    width: 6rem;
   }
 
 }
